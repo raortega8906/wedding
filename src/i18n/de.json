@@ -14,13 +14,14 @@
     "footer": "Unsere Hochzeit"
   },
   "principal": {
-    "fecha": "22 · OKTOBER · 2026"
+    "fecha": "22 · Oktober · 2026",
+    "lugar": "Cartagena de Indias, Kolumbien"
   },
   "historia": {
     "titulo": "Unsere Geschichte",
-    "p1": "Eine Geschichte, die an verschiedenen Orten begann, in verschiedenen Sprachen und Kulturen, die weit entfernt schienen, aber das Schicksal brachte sie zusammen.",
-    "p2": "Nach Tausenden von Kilometern verstanden wir, dass Zuhause kein Ort war, sondern die Gewissheit, einander zu finden. Heute feiern wir die Liebe, die unsere Familien, unsere Länder und unsere Welten vereint hat, dankbar gegenüber Gott und Ihnen, Teil dieses Traums zu sein.",
-    "p3": "Eine Feier, die drei Kulturen, drei Sprachen und eine einzige Geschichte vereint."
+    "p1": "Eine Geschichte, die an verschiedenen Orten begann, in unterschiedlichen Sprachen und Kulturen, die einst weit voneinander entfernt schienen, doch vom Schicksal zusammengeführt wurden.",
+    "p2": "Nachdem wir Tausende von Kilometern zurückgelegt hatten, erkannten wir, dass ein Zuhause kein Ort ist, sondern die Gewissheit, es im anderen zu finden. Heute feiern wir die Liebe, die unsere Familien, unsere Länder und unsere Welten miteinander verbunden hat. Wir sind Gott dankbar, dass er uns bis hierher geführt hat, und euch, dass ihr Teil dieses Traums seid.",
+    "p3": "Eine Feier, die drei Kulturen, drei Sprachen und eine gemeinsame Geschichte vereint."
   },
   "prewedding": {
     "titulo": "Pre-Wedding",

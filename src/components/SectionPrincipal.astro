@@ -26,9 +26,13 @@ const t = useTranslations(lang);
   </div>
 
   <!-- Fecha -->
-  <div class="font-['WeddingSerif'] tracking-[.25em] uppercase text-[#333] text-center mb-16 md:mb-24">
-    <span style="font-size: clamp(0.9rem, 4vw, 1.4rem);">
+  <div class="flex flex-col items-center font-['WeddingSerif'] tracking-[.25em] text-[#333] text-center mb-16 md:mb-24">
+    <span style="font-size: clamp(0.9rem, 4vw, 1.4rem);" class="uppercase">
       { t.principal.fecha }
+    </span>
+    <hr class="md:w-[450px] w-[350px] border-t-1 border-[#333] my-4">
+    <span style="font-size: clamp(0.9rem, 4vw, 1.4rem);">
+      { t.principal.lugar }
     </span>
   </div>
 
