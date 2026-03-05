@@ -39,14 +39,15 @@
     "evento1_desc": "Religious ceremony",
     "evento1_lugar": "Iglesia Santo Toribio",
     "evento2_hora": "5:00 p.m.",
+    "evento2_desc": "Celebratory Procession",
     "evento2_lugar": "Honor Lane",
     "evento3_hora": "5:15 p.m.",
     "evento3_desc": "Welcome cocktail",
     "evento3_lugar": "Casa 1537",
     "evento4_hora": "7:00 p.m.",
-    "evento4_desc": "Celebration begins",
+    "evento4_desc": "Reception Begins",
     "evento5_hora": "3:00 a.m.",
-    "evento5_desc": "End of the evening"
+    "evento5_desc": "End of the Celebration"
   },
   "dresscode": {
     "titulo": "Dress Code",

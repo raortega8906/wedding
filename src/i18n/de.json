@@ -36,17 +36,18 @@
   },
   "celebracion": {
     "evento1_hora": "15:30 Uhr",
-    "evento1_desc": "Religiöse Zeremonie",
+    "evento1_desc": "Kirchliche Trauung",
     "evento1_lugar": "Iglesia Santo Toribio",
     "evento2_hora": "17:00 Uhr",
+    "evento2_desc": "Festliche Prozession",
     "evento2_lugar": "Ehrenallee",
     "evento3_hora": "17:15 Uhr",
     "evento3_desc": "Willkommenscocktail",
     "evento3_lugar": "Casa 1537",
     "evento4_hora": "19:00 Uhr",
-    "evento4_desc": "Beginn der Feier",
+    "evento4_desc": "Beginn der Hochzeitsfeier",
     "evento5_hora": "03:00 Uhr",
-    "evento5_desc": "Ende des Abends"
+    "evento5_desc": "Ende der Feier"
   },
   "dresscode": {
     "titulo": "Dress Code",
