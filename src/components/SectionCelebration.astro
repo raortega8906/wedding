@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import celebrationLine from "../assets/images/celebration-line.png";
+import { useTranslations, type Lang } from '../i18n/index.ts';
+
+interface Props { lang?: Lang; }
+const { lang = 'es' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 mt-6 mb-16">
+  <div class="relative w-full max-w-[480px] mx-auto">
+    <Image src={celebrationLine} alt="Línea de celebración" class="w-full h-auto" widths={[400, 800]} />
+
+    <div class="absolute font-['WeddingSerif'] text-left" style="top: 6%; left: 52%; width: 44%;">
+      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento1_hora}</p>
+      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento1_desc}</p>
+      <p class="text-[#1a1a1a] font-bold underline leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento1_lugar}</p>
+    </div>
+
+    <div class="absolute font-['WeddingSerif'] text-right" style="top: 26%; left: -6%; width: 44%;">
+      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento2_hora}</p>
+      <p class="text-[#1a1a1a] font-bold leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento2_lugar}</p>
+    </div>
+
+    <div class="absolute font-['WeddingSerif'] text-left" style="top: 48%; left: 52%; width: 44%;">
+      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento3_hora}</p>
+      <p class="text-[#333]" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento3_desc}</p>
+      <p class="text-[#1a1a1a] font-bold underline leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento3_lugar}</p>
+    </div>
+
+    <div class="absolute font-['WeddingSerif'] text-right" style="top: 67%; left: -5%; width: 44%;">
+      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento4_hora}</p>
+      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento4_desc}</p>
+    </div>
+
+    <div class="absolute font-['WeddingSerif'] text-left" style="top: 88%; left: 54%; width: 44%;">
+      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento5_hora}</p>
+      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento5_desc}</p>
+    </div>
+  </div>
+</div>

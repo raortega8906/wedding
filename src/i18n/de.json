@@ -1,0 +1,114 @@
+{
+  "header": {
+    "es": "Español",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "menu": {
+    "title": "Menü",
+    "eventos": "Veranstaltungen",
+    "playlist": "Playlist",
+    "hospedaje": "Unterkunft",
+    "contacto": "Kontaktinformationen",
+    "asistencia": "Anmeldung",
+    "footer": "Unsere Hochzeit"
+  },
+  "principal": {
+    "fecha": "22 · OKTOBER · 2026"
+  },
+  "historia": {
+    "titulo": "Unsere Geschichte",
+    "p1": "Eine Geschichte, die an verschiedenen Orten begann, in verschiedenen Sprachen und Kulturen, die weit entfernt schienen, aber das Schicksal brachte sie zusammen.",
+    "p2": "Nach Tausenden von Kilometern verstanden wir, dass Zuhause kein Ort war, sondern die Gewissheit, einander zu finden. Heute feiern wir die Liebe, die unsere Familien, unsere Länder und unsere Welten vereint hat, dankbar gegenüber Gott und Ihnen, Teil dieses Traums zu sein.",
+    "p3": "Eine Feier, die drei Kulturen, drei Sprachen und eine einzige Geschichte vereint."
+  },
+  "prewedding": {
+    "titulo": "Pre-Wedding",
+    "lugar": "Casa Pura Rooftop",
+    "fecha": "21 · Oktober · 2026",
+    "hora": "17:00 bis 21:00 Uhr",
+    "dresscode_titulo": "Dress Code",
+    "dresscode_valor": "Tropical casual",
+    "ver_referencia": "Referenz ansehen",
+    "celebracion": "Feier",
+    "celebracion_fecha": "22 · Oktober · 2026"
+  },
+  "celebracion": {
+    "evento1_hora": "15:30 Uhr",
+    "evento1_desc": "Religiöse Zeremonie",
+    "evento1_lugar": "Iglesia Santo Toribio",
+    "evento2_hora": "17:00 Uhr",
+    "evento2_lugar": "Ehrenallee",
+    "evento3_hora": "17:15 Uhr",
+    "evento3_desc": "Willkommenscocktail",
+    "evento3_lugar": "Casa 1537",
+    "evento4_hora": "19:00 Uhr",
+    "evento4_desc": "Beginn der Feier",
+    "evento5_hora": "03:00 Uhr",
+    "evento5_desc": "Ende des Abends"
+  },
+  "dresscode": {
+    "titulo": "Dress Code",
+    "mujer": "Frau",
+    "mujer_desc": "Langes formelles Kleid",
+    "hombre": "Herr",
+    "hombre_desc": "Schwarzer Smoking",
+    "ver_referencia": "Referenz ansehen",
+    "tonalidades_titulo": "Reservierte Farbtöne",
+    "tonalidades_valor": "Weiß · Beige · Koralle",
+    "adultos": "Nur für Erwachsene"
+  },
+  "playlist": {
+    "titulo": "Playlist",
+    "subtitulo": "Hilf uns, den Soundtrack unserer Feier zu gestalten.",
+    "descripcion": "Teile mit uns die Songs, die auf der Party nicht fehlen dürfen.",
+    "boton": "Playlist ansehen"
+  },
+  "hospedaje": {
+    "titulo": "Unterkunft",
+    "hotel_nombre": "OSH",
+    "hotel_desc": "Hochzeitshotel",
+    "hotel_boton": "Rabattlink",
+    "sugerencias": "Unterkunftsempfehlungen"
+  },
+  "regalo": {
+    "titulo": "Geschenke",
+    "descripcion": "Deine Anwesenheit ist das einzige Geschenk, das wir uns wünschen."
+  },
+  "sugerencia": {
+    "makeup_titulo": "Make-Up Empfehlungen",
+    "makeup_1": "Diego Moya Salón Day Spa",
+    "makeup_2": "Portada Peluquería",
+    "traje_titulo": "Anzugverleih",
+    "traje_1": "Boutique Gabriel",
+    "traje_2": "D° clase",
+    "contactar": "Kontakt"
+  },
+  "contacto": {
+    "titulo": "Kontaktinformationen",
+    "planner_titulo": "Hochzeitsplaner",
+    "planner_nombre": "Xochilt Villanueva",
+    "novia_titulo": "Kontakt der Braut",
+    "contactar": "Kontakt",
+    "dias": "Tage",
+    "horas": "Stunden",
+    "minutos": "Minuten",
+    "segundos": "Sekunden"
+  },
+  "form": {
+    "titulo": "Bestätige deine Teilnahme",
+    "subtitulo": "Wir zählen die Tage bis zur gemeinsamen Feier! Wir bitten dich, deine Teilnahme vor dem 30. September zu bestätigen.",
+    "nombre": "Vor- und Nachname",
+    "alergia": "Allergie",
+    "alergias_placeholder": "Allergien",
+    "confirmacion_titulo": "Teilnahmebestätigung",
+    "pre_wedding": "Pre Wedding",
+    "boda": "Hochzeit",
+    "ambos": "Beides",
+    "ninguno": "Keines",
+    "enviar": "Senden",
+    "msg_success": "Bestätigung gesendet! Danke 🎉",
+    "msg_error": "Ein Fehler ist aufgetreten. Bitte versuche es erneut.",
+    "msg_required": "Bitte fülle Name und Teilnahme aus."
+  }
+}

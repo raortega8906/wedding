@@ -1,0 +1,15 @@
+---
+// src/components/SectionImgFondo.astro
+import { Image } from "astro:assets";
+import backgroundDome from "../assets/images/background-dome-overlay.png"; 
+---
+
+<div class="absolute inset-0 z-0 opacity-05">
+  <Image
+    src={backgroundDome}
+    alt="Fondo con textura sutil"
+    class="w-full h-full object-cover"
+    widths={[640, 1024, 1920, 2560]}
+    sizes="100vw"
+  />
+</div>

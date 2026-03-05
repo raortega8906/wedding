@@ -1,0 +1,114 @@
+{
+  "header": {
+    "es": "Español",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "menu": {
+    "title": "Menú",
+    "eventos": "Eventos",
+    "playlist": "Playlist",
+    "hospedaje": "Hospedaje",
+    "contacto": "Información de Contacto",
+    "asistencia": "Confirmación de Asistencia",
+    "footer": "Nuestra Boda"
+  },
+  "principal": {
+    "fecha": "22 · OCTUBRE · 2026"
+  },
+  "historia": {
+    "titulo": "Nuestra historia",
+    "p1": "Una historia que comenzó en lugares distintos, en idiomas diferentes y en culturas que parecían lejanas, pero que el destino se encargó de acercar.",
+    "p2": "Después de recorrer miles de kilómetros, entendimos que el hogar no era un lugar, sino la certeza de encontrarnos el uno en el otro. Hoy celebramos el amor que unió a nuestras familias, nuestros países y nuestros mundos en uno solo, agradecidos con Dios por guiarnos hasta aquí y con ustedes por ser parte de este sueño.",
+    "p3": "Una celebración que une tres culturas, tres idiomas y una sola historia."
+  },
+  "prewedding": {
+    "titulo": "Pre-Wedding",
+    "lugar": "Casa Pura Rooftop",
+    "fecha": "21 · Octubre · 2026",
+    "hora": "5:00 p.m. a 9:00 p.m.",
+    "dresscode_titulo": "Dress Code",
+    "dresscode_valor": "Tropical casual",
+    "ver_referencia": "Ver referencia",
+    "celebracion": "Celebración",
+    "celebracion_fecha": "22 · Octubre · 2026"
+  },
+  "celebracion": {
+    "evento1_hora": "3:30 p.m.",
+    "evento1_desc": "Ceremonia religiosa",
+    "evento1_lugar": "Iglesia Santo Toribio",
+    "evento2_hora": "5:00 p.m.",
+    "evento2_lugar": "Calle de Honor",
+    "evento3_hora": "5:15 p.m.",
+    "evento3_desc": "Cóctel de bienvenida",
+    "evento3_lugar": "Casa 1537",
+    "evento4_hora": "7:00 p.m.",
+    "evento4_desc": "Inicio de la celebración",
+    "evento5_hora": "3:00 a.m.",
+    "evento5_desc": "Cierre de la velada"
+  },
+  "dresscode": {
+    "titulo": "Dress Code",
+    "mujer": "Mujer",
+    "mujer_desc": "Vestido formal largo",
+    "hombre": "Hombre",
+    "hombre_desc": "Smoking negro",
+    "ver_referencia": "Ver referencia",
+    "tonalidades_titulo": "Tonalidades reservadas",
+    "tonalidades_valor": "Blanco · Beige · Coral",
+    "adultos": "Evento solo para adultos"
+  },
+  "playlist": {
+    "titulo": "Playlist",
+    "subtitulo": "Ayúdanos a crear la banda sonora de nuestra celebración.",
+    "descripcion": "Comparte con nosotros esas canciones que no pueden faltar en la fiesta.",
+    "boton": "Ver playlist"
+  },
+  "hospedaje": {
+    "titulo": "Hospedaje",
+    "hotel_nombre": "OSH",
+    "hotel_desc": "Hotel de la boda",
+    "hotel_boton": "Link para descuento",
+    "sugerencias": "Sugerencias de hospedaje"
+  },
+  "regalo": {
+    "titulo": "Regalos",
+    "descripcion": "Tu presencia es el único regalo que deseamos."
+  },
+  "sugerencia": {
+    "makeup_titulo": "Sugerencias de Make Up",
+    "makeup_1": "Diego Moya Salón Day Spa",
+    "makeup_2": "Portada Peluquería",
+    "traje_titulo": "Alquiler de Traje",
+    "traje_1": "Boutique Gabriel",
+    "traje_2": "D° clase",
+    "contactar": "Contactar"
+  },
+  "contacto": {
+    "titulo": "Información de Contacto",
+    "planner_titulo": "Wedding Planner",
+    "planner_nombre": "Xochilt Villanueva",
+    "novia_titulo": "Contacto de la Novia",
+    "contactar": "Contactar",
+    "dias": "Días",
+    "horas": "Horas",
+    "minutos": "Minutos",
+    "segundos": "Segundos"
+  },
+  "form": {
+    "titulo": "Confirma tu asistencia",
+    "subtitulo": "Estamos contando los días para celebrar juntos! Te agradecemos confirmar tu asistencia antes del 30 de septiembre.",
+    "nombre": "Nombre y apellidos",
+    "alergia": "Alergia",
+    "alergias_placeholder": "Alergias",
+    "confirmacion_titulo": "Confirmación de Asistencia",
+    "pre_wedding": "Pre Wedding",
+    "boda": "Boda",
+    "ambos": "Ambos",
+    "ninguno": "Ninguno",
+    "enviar": "Enviar",
+    "msg_success": "¡Confirmación enviada! Gracias 🎉",
+    "msg_error": "Hubo un error. Inténtalo de nuevo.",
+    "msg_required": "Por favor completa nombre y asistencia."
+  }
+}

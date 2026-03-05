@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import formulario from "../assets/images/formulario.png";
+import { useTranslations, type Lang } from '../i18n/index.ts';
+
+interface Props { lang?: Lang; }
+const { lang = 'es' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center px-4 mt-6 mb-12">
+  <div class="relative w-full md:max-w-[600px] max-w-[420px] mx-auto">
+    <img src={formulario.src} alt="" class="w-full h-auto" />
+    <div class="absolute inset-0 flex flex-col items-center justify-center px-[12%] pt-[18%] pb-[22%]">
+      <h2 class="font-['Amoresa'] text-[#1a1a1a] text-center leading-tight mb-3" style="font-size: clamp(2rem, 9vw, 3.2rem);">
+        {t.form.titulo}
+      </h2>
+      <p class="font-['WeddingSerif'] text-[#444] text-center leading-snug mb-6" style="font-size: clamp(0.7rem, 2.5vw, 0.9rem);">
+        {t.form.subtitulo}
+      </p>
+      <div class="w-full mb-3 relative">
+        <label class="absolute -top-2 left-3 bg-[#F4E8C5] px-1 font-['WeddingSerif'] text-[#888]" style="font-size: clamp(0.55rem, 1.8vw, 0.7rem);">{t.form.nombre}</label>
+        <input id="nombre" name="nombre" type="text" placeholder={t.form.nombre} class="w-full bg-transparent border border-[#aaa] rounded-full px-4 py-2 font-['WeddingSerif'] text-[#888] outline-none focus:border-[#888]" style="font-size: clamp(0.65rem, 2.2vw, 0.82rem);" />
+      </div>
+      <div class="w-full mb-5 relative">
+        <label class="absolute -top-2 left-3 bg-[#F4E8C5] px-1 font-['WeddingSerif'] text-[#888]" style="font-size: clamp(0.55rem, 1.8vw, 0.7rem);">{t.form.alergia}</label>
+        <input id="alergia" name="alergia" type="text" placeholder={t.form.alergias_placeholder} class="w-full bg-transparent border border-[#aaa] rounded-full px-4 py-2 font-['WeddingSerif'] text-[#888] outline-none focus:border-[#888]" style="font-size: clamp(0.65rem, 2.2vw, 0.82rem);" />
+      </div>
+      <p class="font-['WeddingSerif'] text-[#1a1a1a] text-center mb-3" style="font-size: clamp(0.7rem, 2.5vw, 0.88rem);">{t.form.confirmacion_titulo}</p>
+      <div class="grid grid-cols-2 gap-x-6 gap-y-2 mb-6 w-full px-4 ml-[20%]">
+        <label class="flex items-center gap-1.5 font-['WeddingSerif'] text-[#333] cursor-pointer" style="font-size: clamp(0.65rem, 2.2vw, 0.82rem);">
+          <input type="radio" name="asistencia" value="pre-wedding" class="accent-[#1a1a1a]" />{t.form.pre_wedding}
+        </label>
+        <label class="flex items-center gap-1.5 font-['WeddingSerif'] text-[#333] cursor-pointer" style="font-size: clamp(0.65rem, 2.2vw, 0.82rem);">
+          <input type="radio" name="asistencia" value="boda" class="accent-[#1a1a1a]" />{t.form.boda}
+        </label>
+        <label class="flex items-center gap-1.5 font-['WeddingSerif'] text-[#333] cursor-pointer" style="font-size: clamp(0.65rem, 2.2vw, 0.82rem);">
+          <input type="radio" name="asistencia" value="ambos" class="accent-[#1a1a1a]" />{t.form.ambos}
+        </label>
+        <label class="flex items-center gap-1.5 font-['WeddingSerif'] text-[#333] cursor-pointer" style="font-size: clamp(0.65rem, 2.2vw, 0.82rem);">
+          <input type="radio" name="asistencia" value="ninguno" class="accent-[#1a1a1a]" />{t.form.ninguno}
+        </label>
+      </div>
+      <button
+        id="btn-enviar"
+        type="button"
+        data-msg-success={t.form.msg_success}
+        data-msg-error={t.form.msg_error}
+        data-msg-required={t.form.msg_required}
+        class="w-full bg-[#1a1a1a] text-white rounded-full py-3 font-['WeddingSerif'] tracking-[.3em] uppercase hover:bg-[#333] transition-colors disabled:opacity-50 z-10"
+        style="font-size: clamp(0.7rem, 2.5vw, 0.9rem);"
+      >
+        {t.form.enviar}
+      </button>
+      <p id="form-msg" class="text-center mt-3 font-['WeddingSerif'] text-sm hidden"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('btn-enviar') as HTMLButtonElement;
+  const msg = document.getElementById('form-msg');
+
+  const msgSuccess  = btn?.dataset.msgSuccess  ?? '¡Confirmación enviada! Gracias 🎉';
+  const msgError    = btn?.dataset.msgError    ?? 'Hubo un error. Inténtalo de nuevo.';
+  const msgRequired = btn?.dataset.msgRequired ?? 'Por favor completa nombre y asistencia.';
+
+  btn?.addEventListener('click', async () => {
+    const nombre     = (document.getElementById('nombre') as HTMLInputElement)?.value?.trim();
+    const alergia    = (document.getElementById('alergia') as HTMLInputElement)?.value?.trim();
+    const asistencia = (document.querySelector('input[name="asistencia"]:checked') as HTMLInputElement)?.value;
+
+    if (!nombre || !asistencia) {
+      msg!.textContent = msgRequired;
+      msg!.className   = 'text-center mt-3 font-["WeddingSerif"] text-sm text-red-500';
+      msg!.classList.remove('hidden');
+      return;
+    }
+
+    btn!.setAttribute('disabled', 'true');
+
+    try {
+      const res  = await fetch('/api/confirmar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nombre, alergia, asistencia }) });
+      const json = await res.json();
+      if (json.ok) {
+        msg!.textContent = msgSuccess;
+        msg!.className   = 'text-center mt-3 font-["WeddingSerif"] text-sm text-green-600';
+        msg!.classList.remove('hidden');
+      } else { throw new Error(json.error); }
+    } catch (e) {
+      msg!.textContent = msgError;
+      msg!.className   = 'text-center mt-3 font-["WeddingSerif"] text-sm text-red-500';
+      msg!.classList.remove('hidden');
+      btn!.removeAttribute('disabled');
+    }
+  });
+</script>

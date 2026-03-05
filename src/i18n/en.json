@@ -1,0 +1,114 @@
+{
+  "header": {
+    "es": "Español",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "menu": {
+    "title": "Menu",
+    "eventos": "Events",
+    "playlist": "Playlist",
+    "hospedaje": "Accommodation",
+    "contacto": "Contact Information",
+    "asistencia": "RSVP",
+    "footer": "Our Wedding"
+  },
+  "principal": {
+    "fecha": "22 · OCTOBER · 2026"
+  },
+  "historia": {
+    "titulo": "Our Story",
+    "p1": "A story that began in different places, in different languages and cultures that seemed distant, but that destiny brought together.",
+    "p2": "After traveling thousands of kilometers, we understood that home was not a place, but the certainty of finding each other. Today we celebrate the love that united our families, our countries and our worlds into one, grateful to God for guiding us here and to you for being part of this dream.",
+    "p3": "A celebration that unites three cultures, three languages and one single story."
+  },
+  "prewedding": {
+    "titulo": "Pre-Wedding",
+    "lugar": "Casa Pura Rooftop",
+    "fecha": "21 · October · 2026",
+    "hora": "5:00 p.m. to 9:00 p.m.",
+    "dresscode_titulo": "Dress Code",
+    "dresscode_valor": "Tropical casual",
+    "ver_referencia": "See reference",
+    "celebracion": "Celebration",
+    "celebracion_fecha": "22 · October · 2026"
+  },
+  "celebracion": {
+    "evento1_hora": "3:30 p.m.",
+    "evento1_desc": "Religious ceremony",
+    "evento1_lugar": "Iglesia Santo Toribio",
+    "evento2_hora": "5:00 p.m.",
+    "evento2_lugar": "Honor Lane",
+    "evento3_hora": "5:15 p.m.",
+    "evento3_desc": "Welcome cocktail",
+    "evento3_lugar": "Casa 1537",
+    "evento4_hora": "7:00 p.m.",
+    "evento4_desc": "Celebration begins",
+    "evento5_hora": "3:00 a.m.",
+    "evento5_desc": "End of the evening"
+  },
+  "dresscode": {
+    "titulo": "Dress Code",
+    "mujer": "Woman",
+    "mujer_desc": "Long formal dress",
+    "hombre": "Man",
+    "hombre_desc": "Black tuxedo",
+    "ver_referencia": "See reference",
+    "tonalidades_titulo": "Reserved tones",
+    "tonalidades_valor": "White · Beige · Coral",
+    "adultos": "Adults only event"
+  },
+  "playlist": {
+    "titulo": "Playlist",
+    "subtitulo": "Help us create the soundtrack of our celebration.",
+    "descripcion": "Share with us those songs that can't be missing at the party.",
+    "boton": "See playlist"
+  },
+  "hospedaje": {
+    "titulo": "Accommodation",
+    "hotel_nombre": "OSH",
+    "hotel_desc": "Wedding hotel",
+    "hotel_boton": "Discount link",
+    "sugerencias": "Accommodation suggestions"
+  },
+  "regalo": {
+    "titulo": "Gifts",
+    "descripcion": "Your presence is the only gift we wish for."
+  },
+  "sugerencia": {
+    "makeup_titulo": "Make Up Suggestions",
+    "makeup_1": "Diego Moya Salón Day Spa",
+    "makeup_2": "Portada Peluquería",
+    "traje_titulo": "Suit Rental",
+    "traje_1": "Boutique Gabriel",
+    "traje_2": "D° clase",
+    "contactar": "Contact"
+  },
+  "contacto": {
+    "titulo": "Contact Information",
+    "planner_titulo": "Wedding Planner",
+    "planner_nombre": "Xochilt Villanueva",
+    "novia_titulo": "Bride's Contact",
+    "contactar": "Contact",
+    "dias": "Days",
+    "horas": "Hours",
+    "minutos": "Minutes",
+    "segundos": "Seconds"
+  },
+  "form": {
+    "titulo": "Confirm your attendance",
+    "subtitulo": "We are counting the days to celebrate together! We appreciate you confirming your attendance before September 30.",
+    "nombre": "Full name",
+    "alergia": "Allergy",
+    "alergias_placeholder": "Allergies",
+    "confirmacion_titulo": "Attendance Confirmation",
+    "pre_wedding": "Pre Wedding",
+    "boda": "Wedding",
+    "ambos": "Both",
+    "ninguno": "Neither",
+    "enviar": "Send",
+    "msg_success": "Confirmation sent! Thank you 🎉",
+    "msg_error": "An error occurred. Please try again.",
+    "msg_required": "Please fill in your name and attendance."
+  }
+}

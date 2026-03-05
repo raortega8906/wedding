@@ -1,0 +1,44 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css';
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Nuestra Historia - Alejandra & Alexander" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<style is:global>
+			@font-face {
+				font-family: 'Amoresa';
+				src: url('/src/assets/fonts/amoresa-regular.otf') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'WeddingSerif';
+				src: url('/src/assets/fonts/LorenBlakeSerif.otf') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+				font-display: swap;
+			}
+			body {
+				font-family: 'WeddingSerif', serif;
+				@apply antialiased text-[#2c3e50];
+			}
+		</style>
+	</head>
+	<body class="bg-[#f5f0e8]">
+		<slot />
+	</body>
+</html>
