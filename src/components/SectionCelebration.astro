@@ -1,6 +1,4 @@
 ---
-// src/components/SectionCelebration.astro
-import { Image } from "astro:assets";
 import celebrationLine from "../assets/images/line.png";
 import celebration from "../assets/images/celebration.png";
 import { useTranslations, type Lang } from '../i18n/index.ts';
@@ -13,12 +11,34 @@ const t = useTranslations(lang);
 <div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 mt-6 mb-16">
   <div class="relative w-full max-w-[480px] mx-auto" id="celebration-container">
 
-    <!-- Base: ilustraciones sin línea -->
-    <img src={celebration.src} alt="" class="w-full h-auto relative z-30" />
+    <!-- Base: celebration.png oculta (solo ocupa espacio) -->
+    <img src={celebration.src} alt="" class="w-full h-auto opacity-0 pointer-events-none" />
 
     <!-- Línea que se revela con scroll -->
-    <div id="line-wrapper" class="absolute inset-0 z-20" style="clip-path: inset(0 0 100% 0);">
+    <div id="line-wrapper" class="absolute inset-0 z-10" style="clip-path: inset(0 0 100% 0);">
       <img src={celebrationLine.src} alt="" class="w-[80%] h-auto" />
+    </div>
+
+    <!-- Celebration revelada por zonas sincronizadas con la línea -->
+    <div id="cel-0" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(0% 0 78% 0);">
+      <img src={celebration.src} alt="" class="w-full h-auto" />
+    </div>
+    <div id="cel-1" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(18% 0 58% 0);">
+      <img src={celebration.src} alt="" class="w-full h-auto" />
+    </div>
+    <div id="cel-2" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(38% 0 38% 0);">
+      <img src={celebration.src} alt="" class="w-full h-auto" />
+    </div>
+    <div id="cel-3" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(56% 0 18% 0);">
+      <img src={celebration.src} alt="" class="w-full h-auto" />
+    </div>
+    <div id="cel-4" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(76% 0 0% 0);">
+      <img src={celebration.src} alt="" class="w-full h-auto" />
     </div>
 
     <!-- Textos -->
@@ -53,6 +73,15 @@ const t = useTranslations(lang);
   const lineWrapper = document.getElementById('line-wrapper');
   const container   = document.getElementById('celebration-container');
 
+  // Cada imagen aparece cuando la línea llega a ese % de progreso
+  const zones = [
+    { el: document.getElementById('cel-0'), threshold: 0.08 },
+    { el: document.getElementById('cel-1'), threshold: 0.26 },
+    { el: document.getElementById('cel-2'), threshold: 0.46 },
+    { el: document.getElementById('cel-3'), threshold: 0.64 },
+    { el: document.getElementById('cel-4'), threshold: 0.82 },
+  ];
+
   let ticking = false;
 
   window.addEventListener('scroll', () => {
@@ -66,8 +95,15 @@ const t = useTranslations(lang);
         const traveled = vh - rect.top;
         const progress = Math.max(0, Math.min(1, traveled / total));
 
+        // Revela la línea
         const revealPct = Math.round(progress * 100);
         lineWrapper.style.clipPath = `inset(0 0 ${100 - revealPct}% 0)`;
+
+        // Revela cada zona de ilustración
+        zones.forEach(({ el, threshold }) => {
+          if (!el) return;
+          el.style.opacity = progress >= threshold ? '1' : '0';
+        });
 
         ticking = false;
       });
