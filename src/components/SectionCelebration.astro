@@ -2,6 +2,7 @@
 // src/components/SectionCelebration.astro
 import celebrationLine from "../assets/images/line.png";
 import celebration from "../assets/images/celebration.png";
+import FondoAmarillo from "../assets/images/fondo-amarillo.png";
 import { useTranslations, type Lang } from '../i18n/index.ts';
 
 interface Props { lang?: Lang; }
@@ -13,7 +14,7 @@ const t = useTranslations(lang);
   <!-- Imagen de fondo fondo-amarillo.png -->
   <div
     class="absolute inset-0 z-0 pointer-events-none bg-no-repeat mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto] md:bg-[center_15%] bg-[center_25%]"
-    style="background-image: url('/src/assets/images/fondo-amarillo.png');"
+    style={`background-image: url('${FondoAmarillo.src}');`}
     aria-hidden="true"
   ></div>
 

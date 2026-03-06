@@ -1,6 +1,7 @@
 ---
 // src/components/SectionPrincipal.astro
 import { Image } from "astro:assets";
+import Wedding from '../assets/images/wedding.png';
 import { useTranslations, type Lang } from '../i18n/index.ts';
 
 interface Props {
@@ -15,7 +16,7 @@ const t = useTranslations(lang);
   <!-- Imagen de fondo wedding.png centrada en esta sección -->
   <div
     class="absolute inset-0 z-0 pointer-events-none bg-no-repeat bg-top mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto]"
-    style="background-image: url('/src/assets/images/wedding.png');"
+    style={`background-image: url('${Wedding.src}');`}
     aria-hidden="true"
   ></div>
 
