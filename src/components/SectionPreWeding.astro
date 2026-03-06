@@ -13,7 +13,15 @@ const { lang = 'es' } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 mt-6 mb-16" id="eventos">
+<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 mt-6 relative" id="eventos">
+
+  <!-- Imagen de fondo fondo-amarillo.png -->
+  <div
+    class="absolute inset-0 z-0 pointer-events-none bg-no-repeat mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto] md:bg-[center_-1%] bg-[center_-5%]"
+    style="background-image: url('/src/assets/images/fondo-amarillo.png');"
+    aria-hidden="true"
+  ></div>
+
   <div class="w-full max-w-[380px] mx-auto mb-0">
     <Image id="floral-divider"  src={floralDividerTop} alt="" class="w-full h-auto" widths={[300, 600]} />
   </div>
