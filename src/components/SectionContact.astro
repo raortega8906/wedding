@@ -1,6 +1,8 @@
 ---
+// src/components/SectionContact.astro
 import { Image } from "astro:assets";
 import florIzqOtra from "../assets/images/flor-izq-otra.png";
+import florDerOtra from "../assets/images/flor-der-otra.png";
 import instagranamIcon from "../assets/icons/instagram.svg";
 import whatsappIcon from "../assets/icons/whatsapp.svg";
 import { useTranslations, type Lang } from '../i18n/index.ts';
@@ -10,64 +12,71 @@ const { lang = 'es' } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<div class="w-full max-w-full mx-auto flex flex-col items-center text-center px-4 mt-6 mb-12 relative" id="contacto">
-  <div class="absolute z-10" style="left: clamp(-20px, 0vw, 0px); top: 10vh; width: clamp(70px, 18vw, 130px);">
-    <Image src={florIzqOtra} alt="" class="w-full h-auto" />
+<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 mt-6 mb-12 relative" id="contacto">
+  <div class="absolute z-10" style="left: clamp(-20px, 0vw, 0px); top: 11vh; width: clamp(70px, 18vw, 130px);">
+      <Image id="flor-izq-otra" src={florIzqOtra} alt="" class="w-[380px] md:max-w-[150px] max-w-[100px] h-auto" />
+  </div>
+  <div class="absolute z-10" style="right: clamp(20px, 0vw, 0px); top: 30vh; width: clamp(70px, 18vw, 150px);">
+      <Image id="flor-der-otra" src={florDerOtra} alt="" class="w-[380px] md:max-w-[150px] max-w-[100px] h-auto" />
   </div>
 
-  <h2 class="font-['Amoresa'] text-[#1a1a1a] mb-8" style="font-size: clamp(2.4rem, 10vw, 4rem);">
+  <h2 class="reveal-heading font-['Amoresa'] text-[#1a1a1a] mb-8" style="font-size: clamp(2.4rem, 10vw, 4rem);">
     {t.contacto.titulo}
   </h2>
 
   <p class="font-['WeddingSerif'] font-bold tracking-[.2em] uppercase text-[#1a1a1a] mb-1" style="font-size: clamp(0.85rem, 3vw, 1.05rem);">{t.contacto.planner_titulo}</p>
   <p class="font-['WeddingSerif'] text-[#444] mb-3" style="font-size: clamp(0.85rem, 3vw, 1.05rem);">{t.contacto.planner_nombre}</p>
   <div class="mb-8">
-    <a href="#" class="inline-flex items-center gap-2 px-6 py-1.5 border border-[#999] rounded-full font-['WeddingSerif'] tracking-widest text-[#666] hover:bg-[#f5f5f5] transition-colors" style="font-size: clamp(0.65rem, 2.2vw, 0.8rem);">
+    <a href="#" class="inline-flex items-center gap-2 px-6 py-1.5 border border-[#999] rounded-full font-['WeddingSerif'] tracking-widest text-[#666] hover:bg-[#000] hover:text-white transition-colors" style="font-size: clamp(0.65rem, 2.2vw, 0.8rem);">
       {t.contacto.contactar}
-      <Image src={whatsappIcon} alt="WhatsApp" class="w-3.5 h-3.5" />
+      <Image src={whatsappIcon} alt="WhatsApp" class="w-3.5 h-3.5 hover:invert" />
     </a>
   </div>
 
   <p class="font-['WeddingSerif'] font-bold tracking-[.2em] uppercase text-[#1a1a1a] mb-3" style="font-size: clamp(0.85rem, 3vw, 1.05rem);">{t.contacto.novia_titulo}</p>
   <div class="mb-16">
-    <a href="#" class="inline-flex items-center gap-2 px-6 py-1.5 border border-[#999] rounded-full font-['WeddingSerif'] tracking-widest text-[#666] hover:bg-[#f5f5f5] transition-colors" style="font-size: clamp(0.65rem, 2.2vw, 0.8rem);">
+    <a href="#" class="inline-flex items-center gap-2 px-6 py-1.5 border border-[#999] rounded-full font-['WeddingSerif'] tracking-widest text-[#666] hover:bg-[#000] hover:text-white transition-colors" style="font-size: clamp(0.65rem, 2.2vw, 0.8rem);">
       {t.contacto.contactar}
-      <Image src={instagranamIcon} alt="Instagram" class="w-3.5 h-3.5" />
+      <Image src={instagranamIcon} alt="Instagram" class="w-3.5 h-3.5 hover:invert" />
     </a>
   </div>
 
   <div class="flex items-end justify-center gap-2 md:gap-4">
     <div class="flex flex-col items-center">
-      <span id="countdown-days" class="font-['Amoresa'] text-[#1a1a1a]" style="font-size: clamp(2rem, 10vw, 4rem); line-height: 1;">0</span>
-      <hr class="w-18 border-t-2 border-[#999] my-1" />
-      <span class="font-['WeddingSerif'] tracking-[.15em] uppercase text-[#666]" style="font-size: clamp(0.6rem, 2vw, 0.8rem);">{t.contacto.dias}</span>
+      <span id="countdown-days" class="reveal-heading font-['Amoresa'] text-[#1a1a1a]" style="font-size: clamp(2rem, 10vw, 4rem); line-height: 1;">0</span>
+      <hr class="w-18 border-t-1 border-[#999] my-1" />
+      <span class="font-['WeddingSerif'] tracking-[.15em] text-[#666]" style="font-size: clamp(0.6rem, 2vw, 0.8rem);">{t.contacto.dias}</span>
     </div>
     <span class="font-['Amoresa'] text-[#1a1a1a] pb-5" style="font-size: clamp(2rem, 10vw, 4rem);">:</span>
     <div class="flex flex-col items-center">
-      <span id="countdown-hours" class="font-['Amoresa'] text-[#1a1a1a]" style="font-size: clamp(2rem, 10vw, 4rem); line-height: 1;">0</span>
-      <hr class="w-18 border-t-2 border-[#999] my-1" />
-      <span class="font-['WeddingSerif'] tracking-[.15em] uppercase text-[#666]" style="font-size: clamp(0.6rem, 2vw, 0.8rem);">{t.contacto.horas}</span>
+      <span id="countdown-hours" class="reveal-heading font-['Amoresa'] text-[#1a1a1a]" style="font-size: clamp(2rem, 10vw, 4rem); line-height: 1;">0</span>
+      <hr class="w-18 border-t-1 border-[#999] my-1" />
+      <span class="font-['WeddingSerif'] tracking-[.15em] text-[#666]" style="font-size: clamp(0.6rem, 2vw, 0.8rem);">{t.contacto.horas}</span>
     </div>
     <span class="font-['Amoresa'] text-[#1a1a1a] pb-4" style="font-size: clamp(2rem, 10vw, 4rem);">:</span>
     <div class="flex flex-col items-center">
-      <span id="countdown-minutes" class="font-['Amoresa'] text-[#1a1a1a]" style="font-size: clamp(2rem, 10vw, 4rem); line-height: 1;">0</span>
-      <hr class="w-18 border-t-2 border-[#999] my-1" />
-      <span class="font-['WeddingSerif'] tracking-[.15em] uppercase text-[#666]" style="font-size: clamp(0.6rem, 2vw, 0.8rem);">{t.contacto.minutos}</span>
+      <span id="countdown-minutes" class="reveal-heading font-['Amoresa'] text-[#1a1a1a]" style="font-size: clamp(2rem, 10vw, 4rem); line-height: 1;">0</span>
+      <hr class="w-18 border-t-1 border-[#999] my-1" />
+      <span class="font-['WeddingSerif'] tracking-[.15em] text-[#666]" style="font-size: clamp(0.6rem, 2vw, 0.8rem);">{t.contacto.minutos}</span>
     </div>
     <span class="font-['Amoresa'] text-[#1a1a1a] pb-4" style="font-size: clamp(2rem, 10vw, 4rem);">:</span>
     <div class="flex flex-col items-center">
-      <span id="countdown-seconds" class="font-['Amoresa'] text-[#1a1a1a]" style="font-size: clamp(2rem, 10vw, 4rem); line-height: 1;">0</span>
-      <hr class="w-18 border-t-2 border-[#999] my-1" />
-      <span class="font-['WeddingSerif'] tracking-[.15em] uppercase text-[#666]" style="font-size: clamp(0.6rem, 2vw, 0.8rem);">{t.contacto.segundos}</span>
+      <span id="countdown-seconds" class="reveal-heading font-['Amoresa'] text-[#1a1a1a]" style="font-size: clamp(2rem, 10vw, 4rem); line-height: 1;">0</span>
+      <hr class="w-18 border-t-1 border-[#999] my-1" />
+      <span class="font-['WeddingSerif'] tracking-[.15em] text-[#666]" style="font-size: clamp(0.6rem, 2vw, 0.8rem);">{t.contacto.segundos}</span>
     </div>
   </div>
 </div>
 
 <script>
+  // --- Countdown
   const weddingDate = new Date('2026-10-22T17:00:00');
   function updateCountdown() {
     const diff = weddingDate.getTime() - new Date().getTime();
-    if (diff <= 0) { ['days','hours','minutes','seconds'].forEach(id => document.getElementById(`countdown-${id}`)!.textContent = '0'); return; }
+    if (diff <= 0) {
+      ['days','hours','minutes','seconds'].forEach(id => document.getElementById(`countdown-${id}`)!.textContent = '0');
+      return;
+    }
     document.getElementById('countdown-days')!.textContent    = String(Math.floor(diff / 86400000));
     document.getElementById('countdown-hours')!.textContent   = String(Math.floor((diff % 86400000) / 3600000));
     document.getElementById('countdown-minutes')!.textContent = String(Math.floor((diff % 3600000) / 60000));
@@ -75,4 +84,52 @@ const t = useTranslations(lang);
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  // --- Flores
+  const florIzq = document.getElementById('flor-izq-otra') as HTMLImageElement | null;
+  const florDer = document.getElementById('flor-der-otra') as HTMLImageElement | null;
+
+  // --- Scroll: parallax + opacidad
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const section = document.getElementById('contacto');
+        if (section) {
+          const scrollY    = window.scrollY;
+          const sectionTop = section.getBoundingClientRect().top + scrollY;
+          const progress   = (scrollY - sectionTop + window.innerHeight) / (section.offsetHeight + window.innerHeight);
+          const clamped    = Math.max(0, Math.min(1, progress));
+
+          const moveIzq = (clamped - 0.5) * -120;
+          const moveDer = (clamped - 0.5) * -80;
+          const opacity = clamped < 0.1 ? clamped * 10 : clamped > 0.9 ? (1 - clamped) * 10 : 1;
+
+          if (florIzq) { florIzq.style.opacity = String(opacity); florIzq.dataset.parallax = String(moveIzq); }
+          if (florDer) { florDer.style.opacity = String(opacity); florDer.dataset.parallax = String(moveDer); }
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  window.dispatchEvent(new Event('scroll'));
+
+  // --- Balanceo suave continuo (brisa)
+  let time = 0;
+  function sway() {
+    time += 0.015;
+    const swing    = Math.sin(time + 0.7) * 2;
+    const swingDer = Math.sin(time + 1.5) * 1.8;
+
+    const parallaxIzq = parseFloat(florIzq?.dataset.parallax || '0');
+    const parallaxDer = parseFloat(florDer?.dataset.parallax || '0');
+
+    if (florIzq) florIzq.style.transform = `translateY(${parallaxIzq}px) rotate(${swing}deg)`;
+    if (florDer) florDer.style.transform  = `translateY(${parallaxDer}px) rotate(${-swingDer}deg)`;
+
+    requestAnimationFrame(sway);
+  }
+  sway();
 </script>
