@@ -69,9 +69,9 @@
   "hospedaje": {
     "titulo": "Accommodation",
     "hotel_nombre": "OSH",
-    "hotel_desc": "Wedding hotel",
+    "hotel_desc": "Recommended Hotel",
     "hotel_boton": "Discount link",
-    "sugerencias": "Accommodation suggestions"
+    "sugerencias": "OTHER ACCOMMODATION SUGGESTIONS"
   },
   "regalo": {
     "titulo": "Gifts",

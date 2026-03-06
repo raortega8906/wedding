@@ -5,21 +5,25 @@ import ramaAbajo from "../assets/images/rama-arriba.png";
 import hotelOsh from "../assets/images/hotel-osh.png";
 import gallery1 from "../assets/images/hospedaje-1.png";
 import gallery2 from "../assets/images/hospedaje-2.png";
-// import gallery3 from "../assets/images/hospedaje-3.png";
+import { useTranslations, type Lang } from '../i18n/index.ts';
+
+interface Props { lang?: Lang; }
+const { lang = 'es' } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 mt-6 mb-12" id="hospedaje">
 
   <!-- Título Hospedaje -->
   <h2
-    class="font-['Amoresa'] text-[#1a1a1a] mb-6"
+    class="reveal-heading font-['Amoresa'] text-[#1a1a1a] mb-6"
     style="font-size: clamp(2.4rem, 10vw, 4rem);"
   >
-    Hospedaje
+    {t.hospedaje.titulo}
   </h2>
 
   <!-- Hotel principal -->
-  <div class="flex-shrink-0 w-[100%] max-w-[180px]">
+  <div class="flex-shrink-0 w-[100%] md:max-w-[400px] max-w-[300px]">
     <Image
       src={hotelOsh}
       alt="Hotel OSH"
@@ -33,23 +37,23 @@ import gallery2 from "../assets/images/hospedaje-2.png";
     class="font-['WeddingSerif'] text-[#1a1a1a] tracking-[.2em] mt-4 mb-1"
     style="font-size: clamp(0.9rem, 3.5vw, 1.15rem);"
   >
-    OSH
+    {t.hospedaje.hotel_nombre}
   </p>
   <p
     class="font-['WeddingSerif'] text-[#444] mb-3"
     style="font-size: clamp(0.85rem, 3vw, 1.05rem);"
   >
-    Hotel de la boda
+    {t.hospedaje.hotel_desc}
   </p>
 
   <!-- Botón link descuento -->
   <div class="mb-12">
     <a
       href="#"
-      class="inline-block px-8 py-2 border border-[#999] rounded-full font-['WeddingSerif'] tracking-widest text-[#666] hover:bg-[#f5f5f5] transition-colors"
+      class="inline-block px-8 py-1 border border-[#999] rounded-full font-['WeddingSerif'] tracking-widest text-[#666] hover:bg-[#000] hover:text-white transition-colors"
       style="font-size: clamp(0.7rem, 2.5vw, 0.85rem);"
     >
-      Link para descuento
+      {t.hospedaje.hotel_boton}
     </a>
   </div>
 
@@ -58,7 +62,7 @@ import gallery2 from "../assets/images/hospedaje-2.png";
     class="font-['WeddingSerif'] font-bold tracking-[.2em] uppercase text-[#1a1a1a] mb-6"
     style="font-size: clamp(0.85rem, 3vw, 1.05rem);"
   >
-    Sugerencias de hospedaje
+    {t.hospedaje.sugerencias}
   </p>
 
 </div>
