@@ -52,11 +52,11 @@
   "dresscode": {
     "titulo": "Dress Code",
     "mujer": "Frau",
-    "mujer_desc": "Langes formelles Kleid",
-    "hombre": "Herr",
-    "hombre_desc": "Schwarzer Smoking",
-    "ver_referencia": "Referenz ansehen",
-    "tonalidades_titulo": "Reservierte Farbtöne",
+    "mujer_desc": "Abendkleid",
+    "hombre": "Männer",
+    "hombre_desc": "Black Tie",
+    "ver_referencia": "Inspiration ansehen",
+    "tonalidades_titulo": "Reservierte Farben",
     "tonalidades_valor": "Weiß · Beige · Koralle",
     "adultos": "Nur für Erwachsene"
   },

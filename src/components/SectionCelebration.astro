@@ -1,4 +1,5 @@
 ---
+// src/components/SectionCelebration.astro
 import celebrationLine from "../assets/images/line.png";
 import celebration from "../assets/images/celebration.png";
 import { useTranslations, type Lang } from '../i18n/index.ts';
@@ -11,10 +12,11 @@ const t = useTranslations(lang);
 <div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 pt-16 relative">
   <!-- Imagen de fondo fondo-amarillo.png -->
   <div
-    class="absolute inset-0 z-0 pointer-events-none bg-no-repeat mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto] md:bg-[center_-1%] bg-[center_25%]"
+    class="absolute inset-0 z-0 pointer-events-none bg-no-repeat mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto] md:bg-[center_15%] bg-[center_25%]"
     style="background-image: url('/src/assets/images/fondo-amarillo.png');"
     aria-hidden="true"
   ></div>
+
   <div class="relative w-full max-w-[480px] mx-auto" id="celebration-container">
 
     <!-- Base: celebration.png oculta (solo ocupa espacio) -->

@@ -1,4 +1,5 @@
 ---
+// src/components/SectionDressCode.astro
 import { Image } from "astro:assets";
 import pareja from "../assets/images/pareja.png";
 import ramaArriba from "../assets/images/rama-arriba.png";
@@ -11,16 +12,22 @@ const { lang = 'es' } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 mt-6 mb-0">
+<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 pt-26 mb-0 relative">
+  <!-- Imagen de fondo fondo-amarillo.png -->
+  <div
+    class="absolute inset-0 z-0 pointer-events-none bg-no-repeat mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto] md:bg-[center_102%] bg-[center_108%]"
+    style="background-image: url('/src/assets/images/fondo-amarillo.png');"
+    aria-hidden="true"
+  ></div>
 
   <h2 class="font-['WeddingSerif'] font-bold tracking-[.3em] uppercase text-[#1a1a1a] mb-8" style="font-size: clamp(1rem, 4vw, 1.4rem);">
     {t.dresscode.titulo}
   </h2>
 
-  <div class="flex items-start justify-center w-full max-w-[480px] mx-auto mb-6 gap-2">
-    <div class="flex flex-col items-center text-center font-['WeddingSerif'] pt-6 flex-1">
+  <div class="flex items-start justify-center w-full max-w-[480px] mx-auto mb-0 gap-2">
+    <div class="flex flex-col items-center text-center font-['WeddingSerif'] pt-16 flex-1">
       <p class="text-[#1a1a1a] mb-1" style="font-size: clamp(0.85rem, 3vw, 1.05rem);">{t.dresscode.mujer}</p>
-      <hr class="w-18 border-t-2 border-[#999] my-1" />
+      <hr class="w-18 border-t-1 border-[#999] my-1" />
       <p class="text-[#444] leading-snug" style="font-size: clamp(0.75rem, 2.6vw, 0.95rem);">{t.dresscode.mujer_desc}</p>
     </div>
 
@@ -28,15 +35,15 @@ const t = useTranslations(lang);
       <Image src={pareja} alt="Pareja dress code" class="w-full h-auto" widths={[200, 400]} />
     </div>
 
-    <div class="flex flex-col items-center text-center font-['WeddingSerif'] pt-6 flex-1">
+    <div class="flex flex-col items-center text-center font-['WeddingSerif'] pt-16 flex-1">
       <p class="text-[#1a1a1a] mb-1" style="font-size: clamp(0.85rem, 3vw, 1.05rem);">{t.dresscode.hombre}</p>
-      <hr class="w-18 border-t-2 border-[#999] my-1" />
+      <hr class="w-18 border-t-1 border-[#999] my-1" />
       <p class="text-[#444] leading-snug" style="font-size: clamp(0.75rem, 2.6vw, 0.95rem);">{t.dresscode.hombre_desc}</p>
     </div>
   </div>
 
   <div class="mb-10">
-    <a href="#" class="inline-block px-8 py-2 border border-[#999] rounded-full font-['WeddingSerif'] tracking-widest text-[#666] hover:bg-[#f5f5f5] transition-colors" style="font-size: clamp(0.7rem, 2.5vw, 0.85rem);">
+    <a href="#" class="inline-block px-8 py-1 border border-[#999] rounded-full font-['WeddingSerif'] tracking-widest text-[#666] hover:bg-[#000] hover:text-white transition-colors" style="font-size: clamp(0.7rem, 2.5vw, 0.85rem);">
       {t.dresscode.ver_referencia}
     </a>
   </div>

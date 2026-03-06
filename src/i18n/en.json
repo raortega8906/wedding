@@ -51,14 +51,14 @@
   },
   "dresscode": {
     "titulo": "Dress Code",
-    "mujer": "Woman",
-    "mujer_desc": "Long formal dress",
-    "hombre": "Man",
-    "hombre_desc": "Black tuxedo",
-    "ver_referencia": "See reference",
-    "tonalidades_titulo": "Reserved tones",
+    "mujer": "Women",
+    "mujer_desc": "Evening gown",
+    "hombre": "Men",
+    "hombre_desc": "Black tie",
+    "ver_referencia": "See inspiration",
+    "tonalidades_titulo": "Reserved colours",
     "tonalidades_valor": "White · Beige · Coral",
-    "adultos": "Adults only event"
+    "adultos": "Adults-only event"
   },
   "playlist": {
     "titulo": "Playlist",
