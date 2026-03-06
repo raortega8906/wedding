@@ -12,8 +12,15 @@ const t = useTranslations(lang);
 
 <div class="w-full max-w-[1000px] mx-auto relative z-10 px-6">
 
+  <!-- Imagen de fondo wedding.png centrada en esta sección -->
+  <div
+    class="absolute inset-0 z-0 pointer-events-none bg-no-repeat bg-top mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto]"
+    style="background-image: url('/src/assets/images/wedding.png');"
+    aria-hidden="true"
+  ></div>
+
   <!-- Nombres -->
-  <div class="pt-24 md:pt-32 mb-8 text-center">
+  <div class="pt-30 md:pt-42 mb-8 text-center">
     <h1 class="font-['Amoresa'] leading-tight text-[#1a1a1a]" style="font-size: clamp(3rem, 14vw, 6rem);">
       Alejandra
     </h1>
@@ -30,14 +37,14 @@ const t = useTranslations(lang);
     <span style="font-size: clamp(0.9rem, 4vw, 1.4rem);" class="uppercase">
       { t.principal.fecha }
     </span>
-    <hr class="md:w-[450px] w-[350px] border-t-1 border-[#333] my-4">
+    <hr class="md:w-[450px] w-[350px] border-t-1 border-[#373737] my-4">
     <span style="font-size: clamp(0.9rem, 4vw, 1.4rem);">
       { t.principal.lugar }
     </span>
   </div>
 
   <!-- Nuestra historia -->
-  <div class="text-center px-2 md:px-8 mt-8 mb-16 md:mb-24">
+  <div class="text-center px-2 md:px-8 md:mt-68 mt-28 mb-16 md:mb-24">
     <h2 class="reveal-heading font-['Amoresa'] text-[#1a1a1a] mb-8" style="font-size: clamp(2.4rem, 10vw, 4rem);">
       { t.historia.titulo }
     </h2>

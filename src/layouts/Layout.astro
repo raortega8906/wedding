@@ -38,7 +38,22 @@ const { title } = Astro.props;
 			}
 		</style>
 	</head>
-	<body class="bg-[#f5f0e8]">
-		<slot />
+
+	<body class="bg-[#F4EEE7] relative">
+		<!-- Fondo centrado con opacidad -->
+		<div
+			class="absolute inset-0 z-0 flex justify-center pointer-events-none"
+			aria-hidden="true"
+		>
+			<div
+			class="w-full max-w-[1000px] bg-repeat-y bg-top"
+			style={`background-image: url('/src/assets/images/fondo-wedding.png'); background-size: contain;`}
+			></div>
+		</div>
+
+		<!-- Contenido encima -->
+		<div class="relative z-10">
+			<slot />
+		</div>
 	</body>
 </html>
