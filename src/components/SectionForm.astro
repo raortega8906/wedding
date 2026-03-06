@@ -12,11 +12,11 @@ const t = useTranslations(lang);
 <div class="w-full max-w-[1000px] mx-auto flex flex-col items-center px-4 mt-6 mb-12" id="asistencia">
   <div class="relative w-full md:max-w-[600px] max-w-[420px] mx-auto">
     <img src={formulario.src} alt="" class="w-full h-auto" />
-    <div class="absolute inset-0 flex flex-col items-center justify-center px-[12%] pt-[18%] pb-[22%]">
-      <h2 class="font-['Amoresa'] text-[#1a1a1a] text-center leading-tight mb-3" style="font-size: clamp(2rem, 9vw, 3.2rem);">
+    <div class="absolute inset-0 flex flex-col items-center justify-center px-[12%] pb-[22%]">
+      <h2 class="reveal-heading font-['Amoresa'] text-[#1a1a1a] text-center leading-tight mb-3" style="font-size: clamp(2rem, 9vw, 3.2rem);">
         {t.form.titulo}
       </h2>
-      <p class="font-['WeddingSerif'] text-[#444] text-center leading-snug mb-6" style="font-size: clamp(0.7rem, 2.5vw, 0.9rem);">
+      <p class="font-['WeddingSerif'] text-[#444] text-center leading-snug mb-6 md:w-[350px] w-[270px]" style="font-size: clamp(0.7rem, 2.5vw, 0.9rem);">
         {t.form.subtitulo}
       </p>
       <div class="w-full mb-3 relative">
@@ -48,7 +48,7 @@ const t = useTranslations(lang);
         data-msg-success={t.form.msg_success}
         data-msg-error={t.form.msg_error}
         data-msg-required={t.form.msg_required}
-        class="w-full bg-[#1a1a1a] text-white rounded-full py-3 font-['WeddingSerif'] tracking-[.3em] uppercase hover:bg-[#333] transition-colors disabled:opacity-50 z-10"
+        class="md:w-[300px] w-[200px] bg-[#1a1a1a] text-white rounded-full py-2 font-['WeddingSerif'] tracking-[.3em] uppercase hover:bg-[#333] transition-colors disabled:opacity-50 z-10 cursor-pointer"
         style="font-size: clamp(0.7rem, 2.5vw, 0.9rem);"
       >
         {t.form.enviar}

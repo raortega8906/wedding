@@ -107,8 +107,8 @@
     "pre_wedding": "Pre Wedding",
     "boda": "Wedding",
     "ambos": "Both",
-    "ninguno": "Neither",
-    "enviar": "Send",
+    "ninguno": "None",
+    "enviar": "SUBMIT",
     "msg_success": "Confirmation sent! Thank you 🎉",
     "msg_error": "An error occurred. Please try again.",
     "msg_required": "Please fill in your name and attendance."
