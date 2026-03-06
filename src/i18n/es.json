@@ -113,7 +113,7 @@
     "msg_error": "Hubo un error. Inténtalo de nuevo.",
     "msg_required": "Por favor completa nombre y asistencia."
   },
-    "footer": {
-    "creditos": "Design by <a href='#' class='underline hover:text-[#333] transition-colors'>Chabely</a> &amp; Developed by <a href='#' class='underline hover:text-[#333] transition-colors'>Rafa</a>"
+  "footer": {
+    "creditos": "Designed &amp; Developed with ❤️ by <a href='#' class='underline hover:text-[#333] transition-colors'>Caelix</a> and <a href='#' class='underline hover:text-[#333] transition-colors'>Rafa</a>"
   }
 }
