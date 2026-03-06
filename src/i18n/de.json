@@ -112,5 +112,8 @@
     "msg_success": "Bestätigung gesendet! Danke 🎉",
     "msg_error": "Ein Fehler ist aufgetreten. Bitte versuche es erneut.",
     "msg_required": "Bitte fülle Name und Teilnahme aus."
+  },
+    "footer": {
+    "creditos": "Design by <a href='#' class='underline hover:text-[#333] transition-colors'>Chabely</a> &amp; Developed by <a href='#' class='underline hover:text-[#333] transition-colors'>Rafa</a>"
   }
 }

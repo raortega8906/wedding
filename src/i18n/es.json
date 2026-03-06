@@ -112,5 +112,8 @@
     "msg_success": "¡Confirmación enviada! Gracias 🎉",
     "msg_error": "Hubo un error. Inténtalo de nuevo.",
     "msg_required": "Por favor completa nombre y asistencia."
+  },
+    "footer": {
+    "creditos": "Design by <a href='#' class='underline hover:text-[#333] transition-colors'>Chabely</a> &amp; Developed by <a href='#' class='underline hover:text-[#333] transition-colors'>Rafa</a>"
   }
 }
