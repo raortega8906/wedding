@@ -1,4 +1,5 @@
 ---
+// src/components/SectionPlayList.astro
 import { Image } from "astro:assets";
 import florDisco from "../assets/images/flor-disco.png";
 import disco from "../assets/images/disco.png";
@@ -10,8 +11,8 @@ const { lang = 'es' } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 mt-6 mb-12" id="playlist">
-  <h2 class="font-['Amoresa'] text-[#1a1a1a] mb-4" style="font-size: clamp(2.4rem, 10vw, 4rem);">
+<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 pt-20 mb-12" id="playlist">
+  <h2 class="reveal-heading font-['Amoresa'] text-[#1a1a1a] mb-4" style="font-size: clamp(2.4rem, 10vw, 4rem);">
     {t.playlist.titulo}
   </h2>
   <p class="font-['WeddingSerif'] text-[#444] mb-6 max-w-[280px]" style="font-size: clamp(0.85rem, 3vw, 1.05rem);">
@@ -28,7 +29,7 @@ const t = useTranslations(lang);
           {t.playlist.boton}
         </a>
       </div>
-      <div class="flex-shrink-0 disco-container" style="width: clamp(100px, 28vw, 130px); margin-left: -35px; z-index: 10;">
+      <div class="flex-shrink-0 disco-container md:ml-[-18px] ml-[-12px] z-10" style="width: clamp(100px, 28vw, 130px);">
         <Image src={disco} alt="Disco" class="w-full h-[30vh] object-contain" widths={[140, 280]} />
       </div>
     </div>
@@ -43,11 +44,26 @@ const t = useTranslations(lang);
 </div>
 
 <style>
-  .disco-container { animation: discoSlide 4s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+  .disco-container { animation: none; }
+  .disco-container.animate { animation: discoSlide 4s cubic-bezier(0.45, 0, 0.55, 1) forwards; }
   @keyframes discoSlide {
     0%   { transform: translateX(-80%); }
     35%  { transform: translateX(0%); }
     65%  { transform: translateX(0%); }
-    100% { transform: translateX(-80%); }
+    100% { transform: translateX(0%); }
   }
 </style>
+
+<script>
+  const disco = document.querySelector('.disco-container');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        disco?.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  if (disco) observer.observe(disco);
+</script>

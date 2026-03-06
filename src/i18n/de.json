@@ -62,8 +62,8 @@
   },
   "playlist": {
     "titulo": "Playlist",
-    "subtitulo": "Hilf uns, den Soundtrack unserer Feier zu gestalten.",
-    "descripcion": "Teile mit uns die Songs, die auf der Party nicht fehlen dürfen.",
+    "subtitulo": "Helft uns, den Soundtrack unserer Feier zu gestalten.",
+    "descripcion": "Teilt mit uns die Lieder, die auf der Party nicht fehlen dürfen.",
     "boton": "Playlist ansehen"
   },
   "hospedaje": {
@@ -75,7 +75,7 @@
   },
   "regalo": {
     "titulo": "Geschenke",
-    "descripcion": "Deine Anwesenheit ist das einzige Geschenk, das wir uns wünschen."
+    "descripcion": "Eure Anwesenheit ist das einzige Geschenk, das wir uns wünschen."
   },
   "sugerencia": {
     "makeup_titulo": "Make-Up Empfehlungen",

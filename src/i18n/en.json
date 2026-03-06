@@ -63,7 +63,7 @@
   "playlist": {
     "titulo": "Playlist",
     "subtitulo": "Help us create the soundtrack of our celebration.",
-    "descripcion": "Share with us those songs that can't be missing at the party.",
+    "descripcion": "Share with us the songs that must be part of the celebration.",
     "boton": "See playlist"
   },
   "hospedaje": {
@@ -75,7 +75,7 @@
   },
   "regalo": {
     "titulo": "Gifts",
-    "descripcion": "Your presence is the only gift we wish for."
+    "descripcion": "Your presence is the only gift we truly desire."
   },
   "sugerencia": {
     "makeup_titulo": "Make Up Suggestions",
