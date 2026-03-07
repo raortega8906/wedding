@@ -114,6 +114,6 @@
     "msg_required": "Please fill in your name and attendance."
   },
   "footer": {
-    "creditos": "Designed &amp; Developed with ❤️ by <a href='#' class='underline hover:text-[#333] transition-colors'>Caelix</a> and <a href='#' class='underline hover:text-[#333] transition-colors'>Rafa</a>"
+    "creditos": "Designed &amp; Developed with ❤️ by <a href='https://www.instagram.com/caelix_studio/' target='_blank' class='underline hover:text-[#333] transition-colors'>Caelix</a> and <a href='https://github.com/raortega8906' target='_blank' class='underline hover:text-[#333] transition-colors'>Rafa</a>"
   }
 }

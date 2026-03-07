@@ -42,7 +42,7 @@ const t = useTranslations(lang);
   </div>
 
   <div class="mt-[-2%] mb-4">
-    <Image src={casa} alt="Casa Pura Rooftop" class="w-auto h-auto max-w-[200px] md:max-w-[260px]" />
+    <Image src={casa} alt="Casa Pura Rooftop" class="reveal-heading w-auto h-auto max-w-[200px] md:max-w-[260px]" />
   </div>
 
   <p class="font-['WeddingSerif'] tracking-[.2em] text-black mb-3" style="font-size: clamp(1rem, 4vw, 1.4rem);">{t.prewedding.lugar}</p>
@@ -69,6 +69,7 @@ const t = useTranslations(lang);
   const florIzq     = document.getElementById('flor-izq');
   const florDer     = document.getElementById('flor-der');
   const floralDiv   = document.getElementById('floral-divider');
+  const florDown    = document.getElementById('floral-down');
   const anillo      = document.getElementById('anillo');
 
   // --- Utilidad: progreso de un elemento en viewport (0 = fuera abajo, 1 = fuera arriba)
@@ -96,6 +97,7 @@ const t = useTranslations(lang);
   }
 
   initReveal(floralDiv);
+  initReveal(florDown);
   initReveal(anillo);
 
   // --- Scroll handler para parallax flores + reveal
@@ -125,6 +127,7 @@ const t = useTranslations(lang);
         }
 
         updateReveal(floralDiv);
+        updateReveal(florDown);
         updateReveal(anillo);
 
         ticking = false;
@@ -151,6 +154,7 @@ const t = useTranslations(lang);
     if (florIzq) florIzq.style.transform = `translateY(${parallaxIzq}px) rotate(${swing}deg)`;
     if (florDer) florDer.style.transform  = `translateY(${parallaxDer}px) rotate(${-swingDer}deg)`;
     if (floralDiv) floralDiv.style.rotate = `${swingDiv}deg`;
+    if (florDown)  florDown.style.rotate  = `${-swingDiv}deg`;
     if (anillo)    anillo.style.rotate    = `${swingAni}deg`;
 
     requestAnimationFrame(sway);

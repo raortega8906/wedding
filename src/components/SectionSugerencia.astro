@@ -1,5 +1,4 @@
 ---
-// src/components/SectionSugerencia.astro
 import { Image } from "astro:assets";
 import caja from "../assets/images/caja.png";
 import percha from "../assets/images/percha.png";
@@ -13,7 +12,7 @@ const t = useTranslations(lang);
 <div class="w-full max-w-[600px] mx-auto flex flex-col mt-6 mb-12">
 
   <div class="flex items-center gap-4 mb-0">
-    <div class="flex-shrink-0 w-[40%] max-w-[430px]">
+    <div class="flex-shrink-0 w-[40%] max-w-[430px] slide-left">
       <Image src={caja} alt="Make up" class="w-full h-auto" widths={[160, 320]} />
     </div>
     <div class="flex-1 flex flex-col items-end pr-4">
@@ -45,9 +44,44 @@ const t = useTranslations(lang);
         </div>
       </div>
     </div>
-    <div class="flex-shrink-0 w-[40%] max-w-[430px]">
+    <div class="flex-shrink-0 w-[40%] max-w-[430px] slide-right">
       <Image src={percha} alt="Alquiler de traje" class="w-full h-auto" widths={[160, 320]} />
     </div>
   </div>
 
 </div>
+
+<style>
+  .slide-left {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .slide-right {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .slide-left.visible,
+  .slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.slide-left, .slide-right').forEach(el => {
+    observer.observe(el);
+  });
+</script>
