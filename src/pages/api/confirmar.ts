@@ -13,22 +13,11 @@ export const POST: APIRoute = async ({ request }) => {
         headers: { 'Content-Type': 'application/json' },
       });
     }
-
-    // Configura el transporte de nodemailer con tus credenciales
-    // const transporter = nodemailer.createTransport({
-    //   host: 'smtp.wpcache.es',
-    //   port: 465,
-    //   secure: true,
-    //   auth: {
-    //     user: import.meta.env.EMAIL_USER,
-    //     pass: import.meta.env.EMAIL_PASS,
-    //   },
-    // });
-
+    
     const transporter = nodemailer.createTransport({
-        host: 'smtp.ionos.es',  // 👈
-        port: 587,              // 👈
-        secure: false,          // 👈 false para puerto 587 (STARTTLS)
+        host: import.meta.env.EMAIL_HOST,
+        port: Number(import.meta.env.EMAIL_PORT) || 587,
+        secure: false,          
         auth: {
             user: import.meta.env.EMAIL_USER,
             pass: import.meta.env.EMAIL_PASS,
@@ -53,7 +42,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
 
   } catch (error) {
-    console.error('ERROR NODEMAILER:', error); // 👈 mira la terminal
+    console.error('ERROR NODEMAILER:', error); 
     return new Response(JSON.stringify({ error: String(error) }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },

@@ -84,11 +84,11 @@ const t = useTranslations(lang);
 
   // Cada imagen aparece cuando la línea llega a ese % de progreso
   const zones = [
-    { el: document.getElementById('cel-0'), threshold: 0.08 },
-    { el: document.getElementById('cel-1'), threshold: 0.26 },
-    { el: document.getElementById('cel-2'), threshold: 0.46 },
-    { el: document.getElementById('cel-3'), threshold: 0.64 },
-    { el: document.getElementById('cel-4'), threshold: 0.82 },
+      { el: document.getElementById('cel-0'), threshold: 0.10 },
+      { el: document.getElementById('cel-1'), threshold: 0.20 },
+      { el: document.getElementById('cel-2'), threshold: 0.30 },
+      { el: document.getElementById('cel-3'), threshold: 0.30 },
+      { el: document.getElementById('cel-4'), threshold: 0.60 },
   ];
 
   let ticking = false;
@@ -105,7 +105,7 @@ const t = useTranslations(lang);
         const progress = Math.max(0, Math.min(1, traveled / total));
 
         // Revela la línea
-        const revealPct = Math.round(progress * 100);
+        const revealPct = Math.round(progress * 140);
         lineWrapper.style.clipPath = `inset(0 0 ${100 - revealPct}% 0)`;
 
         // Revela cada zona de ilustración
