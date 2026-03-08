@@ -1,14 +1,19 @@
 ---
 // src/components/Footer.astro
-import { useTranslations, type Lang } from '../i18n/index.ts';
+import { useTranslations, type Lang } from "../i18n/index.ts";
 
-interface Props { lang?: Lang; }
-const { lang = 'es' } = Astro.props;
+interface Props {
+  lang?: Lang;
+}
+const { lang = "es" } = Astro.props;
 const t = useTranslations(lang);
 ---
 
 <footer class="w-full max-w-[1000px] mx-auto text-center py-8 px-4">
-  <p class="font-['WeddingSerif'] text-[#888]" style="font-size: clamp(0.65rem, 2vw, 0.8rem);">
+  <p
+    class="font-['LorenBlakeSerif'] text-[#888]"
+    style="font-size: clamp(0.65rem, 2vw, 0.8rem);"
+  >
     <span set:html={t.footer.creditos} />
   </p>
 </footer>

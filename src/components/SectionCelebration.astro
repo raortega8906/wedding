@@ -2,105 +2,208 @@
 // src/components/SectionCelebration.astro
 import celebrationLine from "../assets/images/line.png";
 import celebration from "../assets/images/celebration.png";
-import FondoAmarillo from "../assets/images/fondo-amarillo.png";
-import { useTranslations, type Lang } from '../i18n/index.ts';
+import yellowBackground from "../assets/images/fondo-amarillo.png";
+import { useTranslations, type Lang } from "../i18n/index.ts";
 
-interface Props { lang?: Lang; }
-const { lang = 'es' } = Astro.props;
+interface Props {
+  lang?: Lang;
+}
+const { lang = "es" } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<div class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 pt-16 relative">
+<div
+  class="w-full max-w-[1000px] mx-auto flex flex-col items-center text-center px-4 pt-16 relative"
+>
   <!-- Imagen de fondo fondo-amarillo.png -->
   <div
     class="absolute inset-0 z-0 pointer-events-none bg-no-repeat mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto] md:bg-[center_15%] bg-[center_25%]"
-    style={`background-image: url('${FondoAmarillo.src}');`}
+    style={`background-image: url('${yellowBackground.src}');`}
     aria-hidden="true"
-  ></div>
+  >
+  </div>
 
   <div class="relative w-full max-w-[480px] mx-auto" id="celebration-container">
-
     <!-- Base: celebration.png oculta (solo ocupa espacio) -->
-    <img src={celebration.src} alt="" class="w-full h-auto opacity-0 pointer-events-none" />
+    <img
+      src={celebration.src}
+      alt=""
+      class="w-full h-auto opacity-0 pointer-events-none"
+    />
 
     <!-- Línea que se revela con scroll -->
-    <div id="line-wrapper" class="absolute inset-0 z-10" style="clip-path: inset(0 0 100% 0);">
+    <div
+      id="line-wrapper"
+      class="absolute inset-0 z-10"
+      style="clip-path: inset(0 0 100% 0);"
+    >
       <img src={celebrationLine.src} alt="" class="w-[80%] h-auto" />
     </div>
 
     <!-- Celebration revelada por zonas sincronizadas con la línea -->
-    <div id="cel-0" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
-      style="clip-path: inset(0% 0 78% 0);">
+    <div
+      id="cel-0"
+      class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(0% 0 78% 0);"
+    >
       <img src={celebration.src} alt="" class="w-full h-auto" />
     </div>
-    <div id="cel-1" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
-      style="clip-path: inset(18% 0 58% 0);">
+    <div
+      id="cel-1"
+      class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(18% 0 58% 0);"
+    >
       <img src={celebration.src} alt="" class="w-full h-auto" />
     </div>
-    <div id="cel-2" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
-      style="clip-path: inset(38% 0 38% 0);">
+    <div
+      id="cel-2"
+      class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(38% 0 38% 0);"
+    >
       <img src={celebration.src} alt="" class="w-full h-auto" />
     </div>
-    <div id="cel-3" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
-      style="clip-path: inset(56% 0 18% 0);">
+    <div
+      id="cel-3"
+      class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(56% 0 18% 0);"
+    >
       <img src={celebration.src} alt="" class="w-full h-auto" />
     </div>
-    <div id="cel-4" class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
-      style="clip-path: inset(76% 0 0% 0);">
+    <div
+      id="cel-4"
+      class="absolute inset-0 z-20 opacity-0 transition-opacity duration-500"
+      style="clip-path: inset(76% 0 0% 0);"
+    >
       <img src={celebration.src} alt="" class="w-full h-auto" />
     </div>
 
     <!-- Textos -->
-    <div class="absolute z-30 font-['WeddingSerif'] text-left" style="top: 6%; left: 52%; width: 44%;">
-      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento1_hora}</p>
-      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento1_desc}</p>
-      <p class="text-[#1a1a1a] font-bold underline leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento1_lugar}</p>
+    <div
+      class="absolute z-30 font-['LorenBlakeSerif'] text-left"
+      style="top: 6%; left: 52%; width: 44%;"
+    >
+      <p
+        class="text-[#333] leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento1_hora}
+      </p>
+      <p
+        class="text-[#333] leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento1_desc}
+      </p>
+      <p
+        class="text-[#1a1a1a] font-bold underline leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento1_lugar}
+      </p>
     </div>
-    <div class="absolute z-30 font-['WeddingSerif'] text-right" style="top: 26%; left: -6%; width: 44%;">
-      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento2_hora}</p>
-      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento2_desc}</p>
-      <p class="text-[#1a1a1a] font-bold leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento2_lugar}</p>
+    <div
+      class="absolute z-30 font-['LorenBlakeSerif'] text-right"
+      style="top: 26%; left: -6%; width: 44%;"
+    >
+      <p
+        class="text-[#333] leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento2_hora}
+      </p>
+      <p
+        class="text-[#333] leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento2_desc}
+      </p>
+      <p
+        class="text-[#1a1a1a] font-bold leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento2_lugar}
+      </p>
     </div>
-    <div class="absolute z-30 font-['WeddingSerif'] text-left" style="top: 48%; left: 52%; width: 44%;">
-      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento3_hora}</p>
-      <p class="text-[#333]" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento3_desc}</p>
-      <p class="text-[#1a1a1a] font-bold underline leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento3_lugar}</p>
+    <div
+      class="absolute z-30 font-['LorenBlakeSerif'] text-left"
+      style="top: 48%; left: 52%; width: 44%;"
+    >
+      <p
+        class="text-[#333] leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento3_hora}
+      </p>
+      <p class="text-[#333]" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">
+        {t.celebracion.evento3_desc}
+      </p>
+      <p
+        class="text-[#1a1a1a] font-bold underline leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento3_lugar}
+      </p>
     </div>
-    <div class="absolute z-30 font-['WeddingSerif'] text-right" style="top: 67%; left: -5%; width: 44%;">
-      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento4_hora}</p>
-      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento4_desc}</p>
+    <div
+      class="absolute z-30 font-['LorenBlakeSerif'] text-right"
+      style="top: 67%; left: -5%; width: 44%;"
+    >
+      <p
+        class="text-[#333] leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento4_hora}
+      </p>
+      <p
+        class="text-[#333] leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento4_desc}
+      </p>
     </div>
-    <div class="absolute z-30 font-['WeddingSerif'] text-left" style="top: 88%; left: 54%; width: 44%;">
-      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento5_hora}</p>
-      <p class="text-[#333] leading-snug" style="font-size: clamp(0.75rem, 2.8vw, 1rem);">{t.celebracion.evento5_desc}</p>
+    <div
+      class="absolute z-30 font-['LorenBlakeSerif'] text-left"
+      style="top: 88%; left: 54%; width: 44%;"
+    >
+      <p
+        class="text-[#333] leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento5_hora}
+      </p>
+      <p
+        class="text-[#333] leading-snug"
+        style="font-size: clamp(0.75rem, 2.8vw, 1rem);"
+      >
+        {t.celebracion.evento5_desc}
+      </p>
     </div>
-
   </div>
 </div>
 
 <script>
-  const lineWrapper = document.getElementById('line-wrapper');
-  const container   = document.getElementById('celebration-container');
+  const lineWrapper = document.getElementById("line-wrapper");
+  const container = document.getElementById("celebration-container");
 
   // Cada imagen aparece cuando la línea llega a ese % de progreso
   const zones = [
-      { el: document.getElementById('cel-0'), threshold: 0.10 },
-      { el: document.getElementById('cel-1'), threshold: 0.20 },
-      { el: document.getElementById('cel-2'), threshold: 0.30 },
-      { el: document.getElementById('cel-3'), threshold: 0.30 },
-      { el: document.getElementById('cel-4'), threshold: 0.60 },
+    { el: document.getElementById("cel-0"), threshold: 0.1 },
+    { el: document.getElementById("cel-1"), threshold: 0.2 },
+    { el: document.getElementById("cel-2"), threshold: 0.3 },
+    { el: document.getElementById("cel-3"), threshold: 0.3 },
+    { el: document.getElementById("cel-4"), threshold: 0.6 },
   ];
 
   let ticking = false;
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (!ticking) {
       requestAnimationFrame(() => {
         if (!container || !lineWrapper) return;
 
-        const rect     = container.getBoundingClientRect();
-        const vh       = window.innerHeight;
-        const total    = rect.height + vh;
+        const rect = container.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const total = rect.height + vh;
         const traveled = vh - rect.top;
         const progress = Math.max(0, Math.min(1, traveled / total));
 
@@ -111,7 +214,7 @@ const t = useTranslations(lang);
         // Revela cada zona de ilustración
         zones.forEach(({ el, threshold }) => {
           if (!el) return;
-          el.style.opacity = progress >= threshold ? '1' : '0';
+          el.style.opacity = progress >= threshold ? "1" : "0";
         });
 
         ticking = false;
@@ -120,5 +223,5 @@ const t = useTranslations(lang);
     }
   });
 
-  window.dispatchEvent(new Event('scroll'));
+  window.dispatchEvent(new Event("scroll"));
 </script>

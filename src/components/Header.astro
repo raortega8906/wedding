@@ -1,43 +1,103 @@
 ---
 // src/components/Header.astro
-import { useTranslations, type Lang } from '../i18n/index.ts';
+import { useTranslations, type Lang } from "../i18n/index.ts";
 
 interface Props {
   lang?: Lang;
 }
-const { lang = 'es' } = Astro.props;
+const { lang = "es" } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<header id="site-header" class="fixed top-0 left-0 w-full z-50 pt-6 md:pt-10 transition-all duration-300">
-  <div class="w-full max-w-[1000px] mx-auto px-6 flex justify-between items-center">
-    
-    <div class="flex items-center space-x-2 md:space-x-4 font-['WeddingSerif'] md:pl-80 pl-10">
-      <span class="text-[12px] md:text-[16px] tracking-[0.15em] uppercase text-[#1a1a1a]">
-        <a href="/" class="hover:opacity-60 transition-opacity" class:list={[{ 'font-bold': lang === 'es' }]}>{ t.header.es }</a>
+<header
+  id="site-header"
+  class="fixed top-0 left-0 w-full z-50 pt-6 md:pt-10 transition-all duration-300"
+>
+  <div
+    class="w-full max-w-[1000px] mx-auto px-6 flex justify-between items-center"
+  >
+    <div
+      class="flex items-center space-x-2 md:space-x-4 font-['LorenBlakeSerif'] md:pl-80 pl-10"
+    >
+      <span
+        class="text-[12px] md:text-[16px] tracking-[0.15em] uppercase text-[#1a1a1a]"
+      >
+        <a
+          href="/"
+          class="hover:opacity-60 transition-opacity"
+          class:list={[{ "font-bold": lang === "es" }]}>{t.header.es}</a
+        >
         <span class="text-[#888] font-light mx-1">·</span>
-        <a href="/en" class="hover:opacity-60 transition-opacity" class:list={[{ 'font-bold': lang === 'en' }]}>{ t.header.en }</a>
+        <a
+          href="/en"
+          class="hover:opacity-60 transition-opacity"
+          class:list={[{ "font-bold": lang === "en" }]}>{t.header.en}</a
+        >
         <span class="text-[#888] font-light mx-1">·</span>
-        <a href="/de" class="hover:opacity-60 transition-opacity" class:list={[{ 'font-bold': lang === 'de' }]}>{ t.header.de }</a>
+        <a
+          href="/de"
+          class="hover:opacity-60 transition-opacity"
+          class:list={[{ "font-bold": lang === "de" }]}>{t.header.de}</a
+        >
       </span>
     </div>
 
-    <button id="menu-toggle" class="text-[#1a1a1a] p-2 hover:opacity-60 transition-opacity focus:outline-none relative z-[99999]" aria-label="Abrir menú">
-      <svg id="icon-menu" class="w-4 h-3 md:w-6 md:h-5" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 1H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M1 9H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M1 17H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <button
+      id="menu-toggle"
+      class="text-[#1a1a1a] p-2 hover:opacity-60 transition-opacity focus:outline-none relative z-[99999]"
+      aria-label="Abrir menú"
+    >
+      <svg
+        id="icon-menu"
+        class="w-4 h-3 md:w-6 md:h-5"
+        viewBox="0 0 24 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1 1H23"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"></path>
+        <path
+          d="M1 9H23"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"></path>
+        <path
+          d="M1 17H23"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"></path>
       </svg>
-      <svg id="icon-close" class="w-4 h-4 md:w-6 md:h-6 hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 2L22 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M22 2L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <svg
+        id="icon-close"
+        class="w-4 h-4 md:w-6 md:h-6 hidden"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2 2L22 22"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"></path>
+        <path
+          d="M22 2L2 22"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"></path>
       </svg>
     </button>
   </div>
 </header>
 
 <!-- Overlay -->
-<div id="menu-overlay" class="fixed inset-0 bg-black/50 z-[90] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+<div
+  id="menu-overlay"
+  class="fixed inset-0 bg-black/50 z-[90] opacity-0 pointer-events-none transition-opacity duration-300"
+>
+</div>
 
 <!-- Panel menú -->
 <div
@@ -45,79 +105,114 @@ const t = useTranslations(lang);
   class="fixed top-0 right-0 h-full z-[100] translate-x-full transition-transform duration-500 ease-in-out"
   style="width: min(85vw, 360px); background-color: #ede8d8;"
 >
-  <div class="absolute inset-3 border border-[#c4b89a] rounded-sm pointer-events-none z-0"></div>
-  <div class="absolute inset-5 border border-[#c4b89a] rounded-sm pointer-events-none z-0" style="border-style: dashed; opacity: 0.5;"></div>
+  <div
+    class="absolute inset-3 border border-[#c4b89a] rounded-sm pointer-events-none z-0"
+  >
+  </div>
+  <div
+    class="absolute inset-5 border border-[#c4b89a] rounded-sm pointer-events-none z-0"
+    style="border-style: dashed; opacity: 0.5;"
+  >
+  </div>
 
-  <nav class="relative z-10 flex flex-col items-center justify-center h-full gap-3 px-10">
-    <h2 class="font-['Amoresa'] text-[#1a1a1a] mb-6" style="font-size: clamp(2.8rem, 10vw, 4rem);">
-      { t.menu.title }
+  <nav
+    class="relative z-10 flex flex-col items-center justify-center h-full gap-3 px-10"
+  >
+    <h2
+      class="font-['Amoresa'] text-[#1a1a1a] mb-6"
+      style="font-size: clamp(2.8rem, 10vw, 4rem);"
+    >
+      {t.menu.title}
     </h2>
-    <a href="#eventos" class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['WeddingSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors" style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);">
-      { t.menu.eventos }
+    <a
+      href="#eventos"
+      class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['LorenBlakeSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors"
+      style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);"
+    >
+      {t.menu.eventos}
     </a>
-    <a href="#playlist" class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['WeddingSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors" style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);">
-      { t.menu.playlist }
+    <a
+      href="#playlist"
+      class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['LorenBlakeSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors"
+      style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);"
+    >
+      {t.menu.playlist}
     </a>
-    <a href="#hospedaje" class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['WeddingSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors" style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);">
-      { t.menu.hospedaje }
+    <a
+      href="#hospedaje"
+      class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['LorenBlakeSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors"
+      style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);"
+    >
+      {t.menu.hospedaje}
     </a>
-    <a href="#contacto" class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['WeddingSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors" style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);">
-      { t.menu.contacto }
+    <a
+      href="#contacto"
+      class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['LorenBlakeSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors"
+      style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);"
+    >
+      {t.menu.contacto}
     </a>
-    <a href="#asistencia" class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['WeddingSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors" style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);">
-      { t.menu.asistencia }
+    <a
+      href="#asistencia"
+      class="menu-link w-full text-center px-6 py-2.5 border border-[#b0a080] rounded-full font-['LorenBlakeSerif'] tracking-[.2em] uppercase text-[#333] hover:bg-[#d8cfb8] transition-colors"
+      style="font-size: clamp(0.65rem, 2.2vw, 0.78rem);"
+    >
+      {t.menu.asistencia}
     </a>
-    <p class="font-['WeddingSerif'] font-bold text-[#1a1a1a] mt-8 tracking-[.15em]" style="font-size: clamp(0.75rem, 2.5vw, 0.9rem);">
-      { t.menu.footer }
+    <p
+      class="font-['LorenBlakeSerif'] font-bold text-[#1a1a1a] mt-8 tracking-[.15em]"
+      style="font-size: clamp(0.75rem, 2.5vw, 0.9rem);"
+    >
+      {t.menu.footer}
     </p>
   </nav>
 </div>
 
 <script>
-  const toggle    = document.getElementById('menu-toggle');
-  const panel     = document.getElementById('menu-panel');
-  const overlay   = document.getElementById('menu-overlay');
-  const iconMenu  = document.getElementById('icon-menu');
-  const iconClose = document.getElementById('icon-close');
-  const menuLinks = document.querySelectorAll('.menu-link');
+  const toggle = document.getElementById("menu-toggle");
+  const panel = document.getElementById("menu-panel");
+  const overlay = document.getElementById("menu-overlay");
+  const iconMenu = document.getElementById("icon-menu");
+  const iconClose = document.getElementById("icon-close");
+  const menuLinks = document.querySelectorAll(".menu-link");
 
   let isOpen = false;
 
   function openMenu() {
     isOpen = true;
-    panel!.classList.remove('translate-x-full');
-    panel!.classList.add('translate-x-0');
-    overlay!.classList.remove('opacity-0', 'pointer-events-none');
-    overlay!.classList.add('opacity-100');
-    iconMenu!.classList.add('hidden');
-    iconClose!.classList.remove('hidden');
-    toggle!.style.zIndex = '200';
-    document.body.style.overflow = 'hidden';
+    panel!.classList.remove("translate-x-full");
+    panel!.classList.add("translate-x-0");
+    overlay!.classList.remove("opacity-0", "pointer-events-none");
+    overlay!.classList.add("opacity-100");
+    iconMenu!.classList.add("hidden");
+    iconClose!.classList.remove("hidden");
+    toggle!.style.zIndex = "200";
+    document.body.style.overflow = "hidden";
   }
 
   function closeMenu() {
     isOpen = false;
-    panel!.classList.add('translate-x-full');
-    panel!.classList.remove('translate-x-0');
-    overlay!.classList.add('opacity-0', 'pointer-events-none');
-    overlay!.classList.remove('opacity-100');
-    iconMenu!.classList.remove('hidden');
-    iconClose!.classList.add('hidden');
-    toggle!.style.zIndex = '50';
-    document.body.style.overflow = '';
+    panel!.classList.add("translate-x-full");
+    panel!.classList.remove("translate-x-0");
+    overlay!.classList.add("opacity-0", "pointer-events-none");
+    overlay!.classList.remove("opacity-100");
+    iconMenu!.classList.remove("hidden");
+    iconClose!.classList.add("hidden");
+    toggle!.style.zIndex = "50";
+    document.body.style.overflow = "";
   }
 
-  toggle!.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
-  overlay!.addEventListener('click', closeMenu);
-  menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+  toggle!.addEventListener("click", () => (isOpen ? closeMenu() : openMenu()));
+  overlay!.addEventListener("click", closeMenu);
+  menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
-  const header = document.getElementById('site-header');
+  const header = document.getElementById("site-header");
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 40) {
-      header!.classList.add('backdrop-blur-sm', 'bg-white/10');
+      header!.classList.add("backdrop-blur-sm", "bg-white/10");
     } else {
-      header!.classList.remove('backdrop-blur-sm', 'bg-white/10');
+      header!.classList.remove("backdrop-blur-sm", "bg-white/10");
     }
   });
 </script>

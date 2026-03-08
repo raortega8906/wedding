@@ -1,64 +1,71 @@
 ---
 // src/layouts/Layout.astro
-import '../styles/global.css';
-import fondoWedding from '../assets/images/fondo-wedding.png';
+import "../styles/global.css";
+import backgroundWedding from "../assets/images/fondo-wedding.png";
 interface Props {
-	title: string;
+  title: string;
 }
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Nuestra Historia - Alejandra & Alexander" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<style is:global>
-			@font-face {
-				font-family: 'Amoresa';
-				src: url('/src/assets/fonts/amoresa-regular.otf') format('truetype');
-				font-weight: normal;
-				font-style: normal;
-				font-display: swap;
-			}
-			@font-face {
-				font-family: 'WeddingSerif';
-				src: url('/src/assets/fonts/LorenBlakeSerif.otf') format('truetype');
-				font-weight: normal;
-				font-style: normal;
-				font-display: swap;
-			}
-			html {
-				overflow-x: hidden;
-			}
-			body {
-				font-family: 'WeddingSerif', serif;
-				overflow-x: hidden;
-				@apply antialiased text-[#2c3e50];
-			}
-		</style>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Nuestra Historia - Alejandra & Alexander"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <style is:global>
+      @font-face {
+        font-family: "Amoresa";
+        src: url("/src/assets/fonts/amoresa-regular.otf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "LorenBlakeSerif";
+        src: url("/src/assets/fonts/LorenBlakeSerif.otf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      html {
+        overflow-x: hidden;
+      }
+      body {
+        font-family: "LorenBlakeSerif", serif;
+        overflow-x: hidden;
+        @apply antialiased text-[#2c3e50];
+      }
+    </style>
+  </head>
 
-	<body class="bg-[#F4EEE7] relative">
-		<!-- Fondo centrado con opacidad -->
-		<div
-			class="absolute inset-0 z-0 flex justify-center pointer-events-none"
-			aria-hidden="true"
-		>
-			<div
-				class="w-full max-w-[1000px] bg-repeat-y bg-top"
-				style={`background-image: url('${fondoWedding.src}'); background-size: contain;`}
-			></div>
-		</div>
+  <body class="bg-[#F4EEE7] relative">
+    <!-- Fondo centrado con opacidad -->
+    <div
+      class="absolute inset-0 z-0 flex justify-center pointer-events-none"
+      aria-hidden="true"
+    >
+      <div
+        class="w-full max-w-[1000px] bg-repeat-y bg-top"
+        style={`background-image: url('${backgroundWedding.src}'); background-size: contain;`}
+      >
+      </div>
+    </div>
 
-		<!-- Contenido encima -->
-		<div class="relative z-10">
-			<slot />
-		</div>
-	</body>
+    <!-- Contenido encima -->
+    <div class="relative z-10">
+      <slot />
+    </div>
+  </body>
 </html>

@@ -1,81 +1,102 @@
 ---
 // src/components/SectionPrincipal.astro
 import { Image } from "astro:assets";
-import Wedding from '../assets/images/wedding.png';
-import { useTranslations, type Lang } from '../i18n/index.ts';
+import wedding from "../assets/images/wedding.png";
+import { useTranslations, type Lang } from "../i18n/index.ts";
 
 interface Props {
   lang?: Lang;
 }
-const { lang = 'es' } = Astro.props;
+const { lang = "es" } = Astro.props;
 const t = useTranslations(lang);
 ---
 
 <div class="w-full max-w-[1000px] mx-auto relative z-10 px-6">
-
   <!-- Imagen de fondo wedding.png centrada en esta sección -->
   <div
     class="absolute inset-0 z-0 pointer-events-none bg-no-repeat bg-top mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto]"
-    style={`background-image: url('${Wedding.src}');`}
+    style={`background-image: url('${wedding.src}');`}
     aria-hidden="true"
-  ></div>
+  >
+  </div>
 
   <!-- Nombres -->
   <div class="pt-30 md:pt-42 mb-8 text-center">
-    <h1 class="font-['Amoresa'] leading-tight text-[#1a1a1a]" style="font-size: clamp(3rem, 14vw, 6rem);">
+    <h1
+      class="font-['Amoresa'] leading-tight text-[#1a1a1a]"
+      style="font-size: clamp(3rem, 14vw, 6rem);"
+    >
       Alejandra
     </h1>
-    <span class="font-['Amoresa'] block text-[#1a1a1a] my-1" style="font-size: clamp(2.2rem, 10vw, 4.5rem);">
+    <span
+      class="font-['Amoresa'] block text-[#1a1a1a] my-1"
+      style="font-size: clamp(2.2rem, 10vw, 4.5rem);"
+    >
       &amp;
     </span>
-    <h1 class="font-['Amoresa'] leading-tight text-[#1a1a1a]" style="font-size: clamp(3rem, 14vw, 6rem);">
+    <h1
+      class="font-['Amoresa'] leading-tight text-[#1a1a1a]"
+      style="font-size: clamp(3rem, 14vw, 6rem);"
+    >
       Alexander
     </h1>
   </div>
 
   <!-- Fecha -->
-  <div class="flex flex-col items-center font-['WeddingSerif'] tracking-[.25em] text-[#333] text-center mb-16 md:mb-24">
+  <div
+    class="flex flex-col items-center font-['LorenBlakeSerif'] tracking-[.25em] text-[#333] text-center mb-16 md:mb-24"
+  >
     <span style="font-size: clamp(0.9rem, 4vw, 1.4rem);" class="uppercase">
-      { t.principal.fecha }
+      {t.principal.fecha}
     </span>
-    <hr class="md:w-[450px] w-[350px] border-t-1 border-[#373737] my-4">
+    <hr class="md:w-[450px] w-[350px] border-t-1 border-[#373737] my-4" />
     <span style="font-size: clamp(0.9rem, 4vw, 1.4rem);">
-      { t.principal.lugar }
+      {t.principal.lugar}
     </span>
   </div>
 
   <!-- Nuestra historia -->
   <div class="text-center px-2 md:px-8 md:mt-68 mt-28 mb-16 md:mb-24">
-    <h2 class="reveal-heading font-['Amoresa'] text-[#1a1a1a] mb-8" style="font-size: clamp(2.4rem, 10vw, 4rem);">
-      { t.historia.titulo }
+    <h2
+      class="reveal-heading font-['Amoresa'] text-[#1a1a1a] mb-8"
+      style="font-size: clamp(2.4rem, 10vw, 4rem);"
+    >
+      {t.historia.titulo}
     </h2>
 
-    <div class="font-['WeddingSerif'] leading-relaxed text-[#2c3e50] space-y-6" style="font-size: clamp(0.95rem, 3.5vw, 1.2rem);">
-      <p>{ t.historia.p1 }</p>
-      <p>{ t.historia.p2 }</p>
-      <p>{ t.historia.p3 }</p>
+    <div
+      class="font-['LorenBlakeSerif'] leading-relaxed text-[#2c3e50] space-y-6"
+      style="font-size: clamp(0.95rem, 3.5vw, 1.2rem);"
+    >
+      <p>{t.historia.p1}</p>
+      <p>{t.historia.p2}</p>
+      <p>{t.historia.p3}</p>
     </div>
   </div>
 </div>
 
 <script>
-  const headings = document.querySelectorAll('.reveal-heading');
+  const headings = document.querySelectorAll(".reveal-heading");
 
-  headings.forEach(el => {
-    (el as HTMLElement).style.opacity = '0';
-    (el as HTMLElement).style.filter = 'blur(10px)';
-    (el as HTMLElement).style.transition = 'opacity 1.2s ease, filter 1.2s ease';
+  headings.forEach((el) => {
+    (el as HTMLElement).style.opacity = "0";
+    (el as HTMLElement).style.filter = "blur(10px)";
+    (el as HTMLElement).style.transition =
+      "opacity 1.2s ease, filter 1.2s ease";
   });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        (entry.target as HTMLElement).style.opacity = '1';
-        (entry.target as HTMLElement).style.filter = 'blur(0px)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLElement).style.opacity = "1";
+          (entry.target as HTMLElement).style.filter = "blur(0px)";
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
 
-  headings.forEach(el => observer.observe(el));
+  headings.forEach((el) => observer.observe(el));
 </script>
