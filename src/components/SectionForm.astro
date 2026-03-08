@@ -146,19 +146,19 @@ const t = useTranslations(lang);
     btn?.dataset.msgRequired ?? "Por favor completa nombre y asistencia.";
 
   btn?.addEventListener("click", async () => {
-    const nombre = (
+    const name = (
       document.getElementById("nombre") as HTMLInputElement
     )?.value?.trim();
-    const alergia = (
+    const allergy = (
       document.getElementById("alergia") as HTMLInputElement
     )?.value?.trim();
-    const asistencia = (
+    const attendance = (
       document.querySelector(
         'input[name="asistencia"]:checked',
       ) as HTMLInputElement
     )?.value;
 
-    if (!nombre || !asistencia) {
+    if (!name || !attendance) {
       msg!.textContent = msgRequired;
       msg!.className =
         'text-center mt-3 font-["LorenBlakeSerif"] text-sm text-red-500';
@@ -172,7 +172,7 @@ const t = useTranslations(lang);
       const res = await fetch("/api/confirmar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nombre, alergia, asistencia }),
+        body: JSON.stringify({ name, allergy, attendance }),
       });
       const json = await res.json();
       if (json.ok) {
