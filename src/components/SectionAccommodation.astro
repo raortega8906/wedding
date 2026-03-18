@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 import branchDown from "../assets/images/rama-arriba.png";
 import hotelOsh from "../assets/images/hotel-osh.png";
 import gallery1 from "../assets/images/hospedaje-1.png";
-import gallery2 from "../assets/images/hospedaje-2.png";
 import { useTranslations, type Lang } from "../i18n/index.ts";
 
 interface Props {
@@ -77,47 +76,64 @@ const t = useTranslations(lang);
     class="flex gap-3 px-6 overflow-x-auto scroll-smooth no-scrollbar items-center select-none"
     style="cursor: grab;"
   >
-    <div class="flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4]">
+    <!-- <div class="flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4]">
       <img
         src={gallery1.src}
         class="w-full h-full object-cover rounded-[20px] shadow-lg pointer-events-none"
         alt=""
       />
+    </div> -->
+    <div class="relative flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4] rounded-3xl overflow-hidden">
+        <!-- Imagen -->
+        <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url(/src/assets/images/hospedaje-1.png);">
+        </div>
+
+        <!-- Texto -->
+        <div class="absolute bottom-4 left-4 right-4">
+            <strong class="text-white text-lg leading-tight text-[15px]">
+                Sofitel Legend<br> Santa Clara<br> Cartagena
+            </strong>
+        </div>
     </div>
-    <div class="flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4]">
-      <img
-        src={gallery2.src}
-        class="w-full h-full object-cover rounded-[20px] shadow-lg pointer-events-none"
-        alt=""
-      />
+    <div class="relative flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4] rounded-3xl overflow-hidden">
+        <!-- Imagen -->
+        <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url(/src/assets/images/hospedaje-2.png);">
+        </div>
+
+        <!-- Texto -->
+        <div class="absolute bottom-4 left-4 right-4">
+            <strong class="text-white text-lg leading-tight text-[15px]">
+                Charleston<br> Santa Teresa<br> Cartagena
+            </strong>
+        </div>
     </div>
-    <div class="flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4]">
-      <img
-        src={gallery1.src}
-        class="w-full h-full object-cover rounded-[20px] shadow-lg pointer-events-none"
-        alt=""
-      />
+    <div class="relative flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4] rounded-3xl overflow-hidden">
+        <!-- Imagen -->
+        <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url(/src/assets/images/hospedaje-3.png);">
+        </div>
+
+        <!-- Texto -->
+        <div class="absolute bottom-4 left-4 right-4">
+            <strong class="text-white text-lg leading-tight text-[15px]">
+                Four Seasons Hotel<br> and Residences<br> Cartagena
+            </strong>
+        </div>
     </div>
-    <div class="flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4]">
-      <img
-        src={gallery2.src}
-        class="w-full h-full object-cover rounded-[20px] shadow-lg pointer-events-none"
-        alt=""
-      />
-    </div>
-    <div class="flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4]">
-      <img
-        src={gallery1.src}
-        class="w-full h-full object-cover rounded-[20px] shadow-lg pointer-events-none"
-        alt=""
-      />
-    </div>
-    <div class="flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4]">
-      <img
-        src={gallery2.src}
-        class="w-full h-full object-cover rounded-[20px] shadow-lg pointer-events-none"
-        alt=""
-      />
+    <div class="relative flex-shrink-0 w-[42vw] md:w-[220px] aspect-[3/4] rounded-3xl overflow-hidden">
+        <!-- Imagen -->
+        <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url(/src/assets/images/hospedaje-4.png);">
+        </div>
+
+        <!-- Texto -->
+        <div class="absolute bottom-4 left-4 right-4">
+            <strong class="text-white text-lg leading-tight text-[15px]">
+                Bastion Luxury <br> Hotel
+            </strong>
+        </div>
     </div>
     <div class="flex-shrink-0 w-6 h-10"></div>
   </div>

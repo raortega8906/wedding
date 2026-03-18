@@ -2,6 +2,7 @@
 // src/components/SectionForm.astro
 import { Image } from "astro:assets";
 import form from "../assets/images/formulario.png";
+import cartagena from "../assets/images/cartagena.png";
 import { useTranslations, type Lang } from "../i18n/index.ts";
 
 interface Props {
@@ -15,13 +16,13 @@ const t = useTranslations(lang);
   class="w-full max-w-[1000px] mx-auto flex flex-col items-center mt-6 mb-12"
   id="asistencia"
 >
-  <div class="relative w-full md:max-w-[600px] max-w-[420px] mx-auto">
+  <div class="relative w-full md:max-w-[600px] max-w-[420px] mx-auto ml-4">
     <img src={form.src} alt="" class="reveal-heading w-full h-auto" />
     <div
-      class="absolute inset-0 flex flex-col items-center justify-center px-[12%] pb-[22%]"
+      class="absolute inset-0 flex flex-col items-center justify-center px-[14%] pb-[22%] mt-9 mr-9"
     >
       <h2
-        class="reveal-heading font-['Amoresa'] text-[#1a1a1a] text-center leading-tight mb-3"
+        class="reveal-heading font-['Amoresa'] text-[#1a1a1a] text-center leading-tight"
         style="font-size: clamp(2rem, 9vw, 3.2rem);"
       >
         {t.form.titulo}
@@ -131,6 +132,16 @@ const t = useTranslations(lang);
       >
       </p>
     </div>
+  </div>
+
+  <!-- Cartagena -->
+  <div class="flex-shrink-0 w-[100%] md:max-w-[600px] max-w-[420px]">
+    <Image
+      src={cartagena}
+      alt="Cartagena"
+      class="reveal-heading w-full h-auto"
+      widths={[200, 400]}
+    />
   </div>
 </div>
 
