@@ -5,9 +5,14 @@ export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    const { nombre, alergia, asistencia } = await request.json();
+    // const { nombre, alergia, asistencia } = await request.json();
+    const body = await request.json();
 
-    if (!nombre || !asistencia) {
+    console.log('BODY:', body);
+
+    const { name, allergy, attendance } = body;
+
+    if (!name || !attendance) {
       return new Response(JSON.stringify({ error: 'Faltan campos obligatorios' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
@@ -24,15 +29,24 @@ export const POST: APIRoute = async ({ request }) => {
         },
     });
 
+    // Test para email
+    // transporter.verify((error, success) => {
+    //     if (error) {
+    //         console.log('SMTP ERROR:', error);
+    //     } else {
+    //         console.log('SMTP READY');
+    //     }
+    // });
+
     await transporter.sendMail({
       from: `"Web Boda" <${import.meta.env.EMAIL_USER}>`,
       to: import.meta.env.EMAIL_TO,
-      subject: `✉️ Confirmación de asistencia – ${nombre}`,
+      subject: `✉️ Confirmación de asistencia – ${name}`,
       html: `
         <h2>Nueva confirmación de asistencia</h2>
-        <p><strong>Nombre:</strong> ${nombre}</p>
-        <p><strong>Alergias:</strong> ${alergia || 'Ninguna'}</p>
-        <p><strong>Asistencia:</strong> ${asistencia}</p>
+        <p><strong>Nombre:</strong> ${name}</p>
+        <p><strong>Alergias:</strong> ${allergy || 'Ninguna'}</p>
+        <p><strong>Asistencia:</strong> ${attendance}</p>
       `,
     });
 
