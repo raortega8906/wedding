@@ -34,7 +34,7 @@ const t = useTranslations(lang);
       src={flowerDividerTop}
       alt=""
       class="w-full h-auto"
-      widths={[300, 600]}
+      widths={[300, 600]}       
     />
   </div>
 
@@ -87,7 +87,7 @@ const t = useTranslations(lang);
       class="font-['LorenBlakeSerif'] tracking-[.2em] text-black mb-3"
       style="font-size: clamp(1rem, 4vw, 1.4rem);"
     >
-      {t.prewedding.lugar}
+      <strong>{t.prewedding.lugar}</strong>
     </p>
   </a>
 
@@ -103,11 +103,21 @@ const t = useTranslations(lang);
   >
     {t.prewedding.hora}
   </p>
+
+  <div class="mb-4">
+    <Image
+      id="anillo"
+      src={ring}
+      alt="anillo"
+      class="w-auto h-auto max-w-[160px] md:max-w-[200px]"
+    />
+  </div>
+
   <p
     class="font-['LorenBlakeSerif'] tracking-[.2em] uppercase text-black mb-1"
     style="font-size: clamp(1rem, 4vw, 1.3rem);"
   >
-    {t.prewedding.dresscode_titulo}
+    <strong>{t.prewedding.dresscode_titulo}</strong>
   </p>
   <p
     class="font-['LorenBlakeSerif'] tracking-[.2em] text-[#333] mb-4"
@@ -126,17 +136,8 @@ const t = useTranslations(lang);
     </a>
   </div>
 
-  <div class="mb-4">
-    <Image
-      id="anillo"
-      src={ring}
-      alt="anillo"
-      class="w-auto h-auto max-w-[160px] md:max-w-[200px]"
-    />
-  </div>
-
   <h2
-    class="reveal-heading font-['Amoresa'] text-[#1a1a1a] mb-4"
+    class="reveal-heading font-['Amoresa'] text-[#1a1a1a] mb-4 pt-30"
     style="font-size: clamp(2.4rem, 10vw, 4rem);"
   >
     {t.prewedding.celebracion}
