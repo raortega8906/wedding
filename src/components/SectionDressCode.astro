@@ -17,7 +17,7 @@ const t = useTranslations(lang);
   <!-- Imagen de fondo fondo-amarillo.png -->
   <div
     class="absolute inset-0 z-0 pointer-events-none bg-no-repeat mx-auto md:bg-[length:1000px_auto] bg-[length:100%_auto] md:bg-[center_102%] bg-[center_102%]"
-    style={`background-image: url('${yellowBackground.src}');`}
+    style={`background-image: url('${yellowBackground.src}');background-position: bottom;`}
     aria-hidden="true"
   ></div>
 
@@ -62,7 +62,7 @@ const t = useTranslations(lang);
     <Image src={branchDown} alt="" class="reveal-heading w-full h-auto" widths={[280, 560]} />
   </div>
 
-  <div class="w-full max-w-[300px] mx-auto mt-[2%]">
+  <div class="w-full md:max-w-[400px] max-w-[300px] mx-auto pt-5 mb-[-5%]">
     <Image id="floral-down" src={flowerDown} alt="" class="w-full h-auto" widths={[340, 680]} />
   </div>
 </div>
