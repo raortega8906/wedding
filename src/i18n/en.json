@@ -14,25 +14,25 @@
     "footer": "Our Wedding"
   },
   "principal": {
-    "fecha": "October 22 ∙ 2026",
+    "fecha": "October ∙ 22 ∙ 2026",
     "lugar": "Cartagena de Indias, Colombia"
   },
   "historia": {
     "titulo": "Our Story",
-    "p1": "A story that began in different places,in different languages and cultures that once seemed far apart, yet were brought together by destiny.",
-    "p2": "After travelling thousands of kilometres, we realised that home was not a place, but the certainty of finding it in one another. Today we celebrate the love that united our families, our countries and our worlds into one. We are grateful to God for guiding us here,and to you for being part of this dream.",
-    "p3": "A celebration that brings together three cultures, three languages,and one shared story."
+    "p1": "A story that began in different places, in different languages and cultures that once seemed far apart, yet were brought together by destiny.",
+    "p2": "After travelling thousands of kilometres, we realised that home was not a place, but the certainty of finding it in one another. Today we celebrate the love that united our families, our countries and our worlds into one. We are grateful to God for guiding us here, and to you for being part of this dream.",
+    "p3": "A celebration that brings together three cultures, three languages, and one shared story."
   },
   "prewedding": {
     "titulo": "Pre-Wedding",
     "lugar": "Casa Pura Rooftop",
-    "fecha": "October 21 ∙ 2026",
+    "fecha": "October ∙ 21 ∙ 2026",
     "hora": "5:00 p.m. to 9:00 p.m.",
     "dresscode_titulo": "Dress Code",
     "dresscode_valor": "Tropical casual",
     "ver_referencia": "See inspiration",
     "celebracion": "The Celebration",
-    "celebracion_fecha": "October 22 ∙ 2026"
+    "celebracion_fecha": "October ∙ 22 ∙ 2026"
   },
   "celebracion": {
     "evento1_hora": "3:30 p.m.",
@@ -75,7 +75,7 @@
   },
   "regalo": {
     "titulo": "Gifts",
-    "descripcion": "Your presence is the only gift we truly desire."
+    "descripcion": "Your presence is the only gift we could wish for."
   },
   "sugerencia": {
     "makeup_titulo": "HAIR & MAKEUP RECOMMENDATIONS",
