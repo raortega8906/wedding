@@ -10,7 +10,21 @@ export const POST: APIRoute = async ({ request }) => {
 
     console.log('BODY:', body);
 
-    const { name, allergy, attendance } = body;
+    const { name, allergy, attendance, token } = body;
+
+    // ✅ Validación Turnstile
+    const verify = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        secret: import.meta.env.TURNSTILE_SECRETKEY,
+        response: token,
+      }),
+    });
+    const result = await verify.json();
+    if (!result.success) {
+      return new Response(JSON.stringify({ ok: false, error: "Bot detected" }), { status: 400 });
+    }
 
     if (!name || !attendance) {
       return new Response(JSON.stringify({ error: 'Faltan campos obligatorios' }), {

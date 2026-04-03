@@ -116,6 +116,7 @@ const t = useTranslations(lang);
           />{t.form.ninguno}
         </label>
       </div>
+      <div class="cf-turnstile" data-sitekey="TURNSTILE_SITEKEY" data-theme="light"></div>
       <button
         id="btn-enviar"
         type="button"
@@ -170,7 +171,9 @@ const t = useTranslations(lang);
       ) as HTMLInputElement
     )?.value;
 
-    if (!name || !attendance) {
+    const token = (document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value;
+
+    if (!name || !attendance || !token) {
       msg!.textContent = msgRequired;
       msg!.className =
         'text-center mt-3 font-["LorenBlakeSerif"] text-sm text-red-500';
@@ -184,7 +187,7 @@ const t = useTranslations(lang);
       const res = await fetch("/api/confirmar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, allergy, attendance }),
+        body: JSON.stringify({ name, allergy, attendance, token }),
       });
       const json = await res.json();
       if (json.ok) {
